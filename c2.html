@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C2 Level Roadmap - Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424754",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#6cf8bb",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#001a42",
+                        "outline-variant": "#c2c6d6",
+                        "background": "#f8f9ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#213145",
+                        "tertiary-container": "#a36700",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#825100",
+                        "surface-tint": "#005ac2",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#2170e4",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#002113",
+                        "outline": "#727785",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary": "#0058be",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#adc6ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed-variant": "#004395",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "primary-fixed-dim": "#adc6ff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "on-primary-container": "#fefcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-margin-desktop": "40px",
+                        "section-gap": "48px",
+                        "container-margin-mobile": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .locked-overlay {
+            backdrop-filter: blur(4px);
+            background-color: rgba(248, 249, 255, 0.7);
+        }
+        .timeline-line {
+            background: repeating-linear-gradient(to bottom, transparent, transparent 10px, #c2c6d6 10px, #c2c6d6 20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Simple German Academy</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-6">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container transition-colors p-2 rounded-full" data-icon="local_fire_department">local_fire_department</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container transition-colors p-2 rounded-full" data-icon="language">language</span>
+</div>
+<img alt="User profile avatar" class="w-10 h-10 rounded-full border border-outline-variant shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQB9BrmpPDzmtg5UACRU4CKYUr2PLajcqaQ4ZHNRCToUOhoTHu_-jMSRhDHSa2tJR84WRlNFNUz_DVgyata7-O8FXeo-_2n_H1G1thBI2uD7LqBjG2gFaxCsrZkG5x3i-AwNGaCADg_GKW3b-vjz_zGf5yXGcdZjBb6qOzmOBc5GU8Z-_-ba-hSXhd-i0_i9xHbpXSM66V89iMAiORPQSmj1eB5GWB7TYhCRkrCw7_CU-8vSfPnPvXaa3rr0DMsGzj54mi2na52aI"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-screen w-[280px] bg-surface-container-low dark:bg-surface-container shadow-sm border-r border-outline-variant pt-20 z-40">
+<div class="px-6 mb-8">
+<h2 class="text-headline-md font-bold text-primary">Wilkommen</h2>
+<p class="text-on-surface-variant text-label-md">Level A2 - Intermediate</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-primary font-bold border-l-4 border-primary bg-surface-container-high translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-md">AI Tutor</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<button class="w-full py-3 bg-primary-container text-on-primary-container rounded-xl font-bold hover:opacity-90 transition-opacity">
+                Upgrade to Pro
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 md:pl-[280px] min-h-screen">
+<div class="max-w-[1100px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<!-- Header Section -->
+<section class="mb-section-gap pt-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full text-primary font-bold text-label-md mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock" data-weight="fill">lock</span>
+                            LEVEL C2
+                        </div>
+<h1 class="text-headline-lg-mobile md:text-display-lg font-display-lg text-on-background mb-4">Mastery</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">
+                            Achieve native-like proficiency. Express yourself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in more complex situations.
+                        </p>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<span class="text-label-md text-on-surface-variant font-bold uppercase tracking-wider">Level Progress</span>
+<div class="text-headline-lg text-primary font-extrabold">0%</div>
+<div class="w-48 h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-0 h-full bg-secondary transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Locked Notice -->
+<div class="relative group overflow-hidden rounded-2xl bg-error-container/10 border-2 border-dashed border-error/30 p-8 text-center mb-12">
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 bg-error-container text-on-error-container rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-4xl" data-icon="lock_open">lock_open</span>
+</div>
+<h3 class="text-headline-md text-error">Complete C1 to unlock Mastery</h3>
+<p class="text-on-surface-variant max-w-md">You're currently perfecting your C1 skills. Once you've completed the C1 final assessment, the path to native-level mastery will open for you.</p>
+</div>
+</div>
+<!-- Reward & Milestone Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-section-gap">
+<!-- Milestone Card -->
+<div class="relative bg-surface-container-low rounded-3xl p-8 border border-outline-variant shadow-sm overflow-hidden flex flex-col justify-between min-h-[240px]">
+<div class="absolute top-0 right-0 p-6 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<span class="text-label-sm font-bold text-primary uppercase tracking-widest mb-2 block">Featured Milestone</span>
+<h3 class="text-headline-md text-on-surface mb-2">Linguistic Flexibility &amp; Nuance</h3>
+<p class="text-body-md text-on-surface-variant">Master the ability to pivot between formal academic tone and casual street slang with effortless grace.</p>
+</div>
+<div class="flex items-center gap-2 mt-4 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span class="text-label-md">Goal: 95% Precision</span>
+</div>
+</div>
+<!-- Reward Card -->
+<div class="relative bg-on-background rounded-3xl p-8 shadow-xl overflow-hidden flex flex-col justify-between min-h-[240px]">
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+<div>
+<span class="text-label-sm font-bold text-primary-fixed uppercase tracking-widest mb-2 block">Upcoming Reward</span>
+<h3 class="text-headline-md text-surface mb-2">Native-Level Navigator</h3>
+<p class="text-body-md text-surface/70">A prestigious profile badge and exclusive access to the 'Elite Discourse' community forums.</p>
+</div>
+<div class="flex items-center gap-4 mt-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-xl flex items-center justify-center rotate-12 shadow-inner">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="military_tech">military_tech</span>
+</div>
+<span class="text-surface font-bold">Earned at Module 4 Completion</span>
+</div>
+</div>
+</div>
+<!-- Vertical Roadmap -->
+<div class="relative pl-12 md:pl-24 mb-section-gap">
+<!-- Timeline Line -->
+<div class="absolute left-6 md:left-[60px] top-4 bottom-0 w-[2px] timeline-line"></div>
+<!-- Module List -->
+<div class="space-y-12">
+<!-- Module 1 -->
+<div class="relative">
+<!-- Connector Dot -->
+<div class="absolute -left-[54px] md:-left-[94px] top-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface-container-high border-4 border-surface shadow-md flex items-center justify-center z-10 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="bg-surface rounded-3xl p-6 md:p-8 border border-outline-variant shadow-[4px_20px_0_0_rgba(0,0,0,0.05)] hover:shadow-none transition-shadow group">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="w-full md:w-48 h-32 rounded-2xl bg-surface-container-highest overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="A sophisticated academic library or university research lab with blurred books and scientific equipment. The color palette is composed of cool blues and greys, reflecting a serious, professional research environment in a modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPQAMumMz6bBR_jMtHwASGEEm-THi-UMcSFAooNSxvZp_IfAvmVX2PY8FMU-iTRpjcLaPmLrHbSFsxHolXj3Ap4OnpStFQSU3qU4edMP0QcJWt0qlUz92h4v01bd_qgP_MxaekS3maIO1LUF65JYdblWpIKzoLnkDi8UBh-MHVwxWQ8lwT-i9v22Dvola0UsVYax0i5oZLycs8zX6586eM06nsyxTpAOIROcAK2TNpcaL_vZHC4H9J93TyaJc2PAvpPqYiS2bVVZc0"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-headline-md text-on-surface">Module 1: Academic &amp; Specialized Discourse</h4>
+<span class="text-label-md text-on-surface-variant font-bold">12 Lessons</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Research methodology</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Scientific debates</span>
+</div>
+<button class="px-6 py-2 border-2 border-outline-variant text-outline-variant font-bold rounded-full cursor-not-allowed">
+                                        Locked
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="relative">
+<div class="absolute -left-[54px] md:-left-[94px] top-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface-container-high border-4 border-surface shadow-md flex items-center justify-center z-10 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="bg-surface rounded-3xl p-6 md:p-8 border border-outline-variant shadow-[4px_20px_0_0_rgba(0,0,0,0.05)] hover:shadow-none transition-shadow">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="w-full md:w-48 h-32 rounded-2xl bg-surface-container-highest overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="A modern, high-end boardroom setting with a minimalist glass table and elegant office chairs. Soft, directional morning sunlight illuminates the space, creating a high-key, professional corporate atmosphere with a clean, light-mode palette of whites and blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZmdoOFkikYmOYcx0mkEKc3pa-OiZJ7ECb-PHqDYfETuRkVU7zlaHcfNNRF5YSJVfwg0bQ519ZeMVi_64AQxe_lCAUkSvDkQAkj4MDExxiUdIZiV_q7NqhMc_mmoCfBCMczZU6IwCMBEpREF668qkKAx97ZSuYAlv2bfzgTFLbyT5QNsrQCJ6DQWYD6wonSHCO55JIO3y5-CaWcWdcTMRFwRNlQhMrEbTN0n5UFSl7fiTPr98vvnElnJ4B7lrXnqUIx9Z-ZHF5bBL"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-headline-md text-on-surface">Module 2: Professional Mastery</h4>
+<span class="text-label-md text-on-surface-variant font-bold">10 Lessons</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">High-stakes negotiation</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Rhetoric for leaders</span>
+</div>
+<button class="px-6 py-2 border-2 border-outline-variant text-outline-variant font-bold rounded-full cursor-not-allowed">
+                                        Locked
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="relative">
+<div class="absolute -left-[54px] md:-left-[94px] top-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface-container-high border-4 border-surface shadow-md flex items-center justify-center z-10 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="bg-surface rounded-3xl p-6 md:p-8 border border-outline-variant shadow-[4px_20px_0_0_rgba(0,0,0,0.05)] hover:shadow-none transition-shadow">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="w-full md:w-48 h-32 rounded-2xl bg-surface-container-highest overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="A clean, minimalist media newsroom or broadcast studio background with glowing screens displaying analytical data and news headlines. The lighting is crisp and modern, featuring the brand's primary blue and soft white tones, evoking a mood of deep societal analysis and credible journalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKxxu9woqaoKojUThIKds1bC710ya9rTN0rEHyzEqR_9hb0LdwR1KBH_Ig_M2m_tfvGXw1mFUoIoND2HWVLEeJ7PdRimNAWJgsgLXtnI2rBmq-Jiwr3YCt7i89AwzUVYfGNmcHFQahNB0f4uOrpsbjhLKkS-sFpFQDCKsX5O9_34-4pfIIwD7h65K_-eUOHbaZ9q3zoxtC8xa_bJ7LHEu5zhQs2K5K7_0IbFpZM1M1gcKIjAGPZ67xlqMzXqb4bUZyh7jhjgCxvRpL"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-headline-md text-on-surface">Module 3: Media &amp; Societal Analysis</h4>
+<span class="text-label-md text-on-surface-variant font-bold">15 Lessons</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Political commentary</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Deep-dive journalism</span>
+</div>
+<button class="px-6 py-2 border-2 border-outline-variant text-outline-variant font-bold rounded-full cursor-not-allowed">
+                                        Locked
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 4 -->
+<div class="relative">
+<div class="absolute -left-[54px] md:-left-[94px] top-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface-container-high border-4 border-surface shadow-md flex items-center justify-center z-10 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="bg-surface rounded-3xl p-6 md:p-8 border border-outline-variant shadow-[4px_20px_0_0_rgba(0,0,0,0.05)] hover:shadow-none transition-shadow">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="w-full md:w-48 h-32 rounded-2xl bg-surface-container-highest overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="An artistic, minimalist writer's desk featuring a high-quality fountain pen, open notebooks with elegant handwriting, and a classic German literary book. The setting is bright and serene with a soft-focus garden visible through a window, using a palette of calm blues and warm whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqBLByya8o506KNBmDsYfcYZVYTMCgr9kQz1xhMmO5bEF5zak25YmfMfClPxRgXyfHtr1V9cSXjxeS1VMhyVQH_cg6Xc7AFEZCD_c4f0a2HFn23g_qcZZA8w2KmL9PFinlHfd7_iugt6ioadRBpPF34ghOzQFy2_AMYAtaLeAxeYwZ8FJtddRy-0unocNfCT8wi3sjiEWY38OPaCgJVPLbWRPmOOnqFB1_bl32tmy2Dzz3MDBj1Xa_aNYxXPzvAY_IJOL_Yo0f0FF6"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<h4 class="text-headline-md text-on-surface">Module 4: Creative &amp; Literary Expression</h4>
+<span class="text-label-md text-on-surface-variant font-bold">14 Lessons</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Analyzing classical poetry</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-surface-variant">Creative writing</span>
+</div>
+<button class="px-6 py-2 border-2 border-outline-variant text-outline-variant font-bold rounded-full cursor-not-allowed">
+                                        Locked
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom CTA -->
+<div class="flex justify-center mb-16">
+<button class="flex items-center gap-2 px-10 py-4 bg-surface border-2 border-primary text-primary font-bold rounded-full hover:bg-primary-container/10 transition-all active:scale-95" onclick="history.back()">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                    Return to C1 Dashboard
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface dark:bg-surface-container border-t border-outline-variant shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="layers" data-weight="fill">layers</span>
+<span class="text-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-label-sm">AI</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright dark:bg-surface-dim border-t border-outline-variant md:pl-[320px]">
+<div class="text-label-md font-bold text-on-surface">Simple German Academy</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+<div class="text-label-sm text-on-surface-variant">© 2024 Simple German Academy</div>
+</footer>
+<script>
+        // Micro-interaction for page entry
+        document.addEventListener('DOMContentLoaded', () => {
+            const modules = document.querySelectorAll('.relative.group');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('opacity-100', 'translate-y-0');
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Note: Simple opacity/translate logic for smoother scroll entry
+            const cards = document.querySelectorAll('.bg-surface.rounded-3xl');
+            cards.forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'ease-out');
+            });
+        });
+    </script>
+</body></html>

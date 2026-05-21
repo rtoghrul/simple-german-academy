@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Masterclass: Rechtssprache | Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001a42",
+                        "primary": "#0058be",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#0b1c30",
+                        "outline": "#727785",
+                        "tertiary": "#825100",
+                        "secondary": "#006c49",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#004395",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline-variant": "#c2c6d6",
+                        "on-primary-container": "#fefcff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#2170e4",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424754",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary-container": "#00714d",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-tint": "#005ac2",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "surface": "#f8f9ff",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "container-margin-mobile": "20px",
+                        "container-margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            box-shadow: -4px 0 0 0 #0058be;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .zebra-table tr:nth-child(even) {
+            background-color: rgba(66, 71, 84, 0.03);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-bold text-primary">Simple German Academy</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Alumni Dashboard</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Peer Network</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="local_fire_department">local_fire_department</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="language">language</span>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" data-alt="A professional close-up portrait of a scholar in a modern, brightly lit office environment. The lighting is soft and high-key, reflecting a light-mode aesthetic with clean white backgrounds and deep blue accents. The individual has a friendly yet authoritative expression, wearing a tailored navy suit. The overall mood is academic, professional, and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDmFT3xwrPngCkhsLOk8ojm4s2ew05v0eIw9tJFn_w5ajVYMml05ALIltlkIafJfPO36KMNcqpTcXwlArbiuI5-k8Oz8Wegqt2WNpE1r3BNarUpZ80ji10vjqBnDp3WShLcnfKDfqDzCp6ysFjhf-vv6EhxDTmh7jL6Hm5oLUZHFzQ23yEw1BFiCZhQ_FTbH9kLvRpyhztfYfXTkZCx-wYrhKGukOkJNoS1fjv9hwL2wV1Me0Y2O7_YBjQa6XJ9xCCn6YD-7-9L3o"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation (Desktop Only) -->
+<aside class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-[280px] flex-col bg-surface-container-low border-r border-outline-variant py-8 px-4">
+<div class="mb-8 px-4">
+<h2 class="text-headline-md font-bold text-primary">Wilkommen</h2>
+<p class="text-body-md text-on-surface-variant">Level A2 - Intermediate</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-md font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-label-md font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-md font-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold bg-surface-container-high border-l-4 border-primary rounded-r-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="text-label-md font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-md font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-label-md font-label-md">AI Tutor</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-primary text-on-primary-container rounded-xl shadow-md">
+<p class="text-label-md mb-2">Advance your career</p>
+<button class="w-full py-2 bg-on-primary-container text-primary rounded-lg font-bold text-label-md hover:opacity-90 transition-opacity">Upgrade to Pro</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-24 md:pl-[300px] pr-4 md:pr-10 pb-24 min-h-screen">
+<div class="max-w-[1100px] mx-auto px-4 md:px-0">
+<!-- Hero Section -->
+<section class="mb-section-gap relative overflow-hidden rounded-3xl bg-primary-container text-on-primary-container p-8 md:p-12">
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-sm mb-4 uppercase tracking-wider">Post-C2 Alumni Masterclass</span>
+<h1 class="text-display-lg font-display-lg mb-4 leading-tight">Masterclass: Rechtssprache (Legal German)</h1>
+<p class="text-body-lg opacity-90 max-w-xl">Master the nuanced architectural complexities of German Jurisprudence. Deep dive into statutory interpretation, contract drafting, and civil procedure for high-level legal practice.</p>
+</div>
+<div class="flex flex-col items-center gap-2 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+<div class="relative w-20 h-20">
+<svg class="w-full h-full transform -rotate-90">
+<circle cx="40" cy="40" fill="transparent" r="36" stroke="rgba(255,255,255,0.2)" stroke-width="8"></circle>
+<circle class="text-secondary-container" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.19" stroke-dashoffset="150" stroke-width="8"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-bold text-headline-md">3/12</span>
+</div>
+<span class="text-label-md">Units Completed</span>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Video Lecture Component (8/12 cols) -->
+<div class="md:col-span-8 flex flex-col gap-8">
+<div class="bg-surface-container-lowest rounded-3xl shadow-lg overflow-hidden border border-outline-variant">
+<div class="aspect-video relative group cursor-pointer bg-black">
+<img alt="Video Lecture Cover" class="w-full h-full object-cover opacity-80" data-alt="A sophisticated lecture setting featuring a professional legal instructor standing in front of a modern, blurred library background. The lighting is cinematic with soft highlights, creating an authoritative and academic atmosphere. The overall palette uses deep navy and neutral grays, consistent with a premium masterclass aesthetic. The instructor is gesturing towards a transparent digital overlay displaying legal terms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPYqp_HIvXFEdircUjgw6iQ6oL-QGa6gvpVotGAo8wW6da_tGHHSUG6ZxYE2WSAV4jCYw6y0nywexESiOdFH9yeIHABlDJDcoFff2VqbvchRfs-sNgeMONFZsP3-W4E2zcoPcpvQIZuVrVixBmvxtdR-Mr2YKYvJLsYXNNkeho6xOrYVEnbXVtQFI1kp2PZ_uI5Bi1PdrrAnXAY9xOxerUHv0qPqB9irPOqwV2NvvwZCZ-WIo7VPQvqsuwOYyH1iOOwDsDLlXkrnoR"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-white text-label-md bg-black/40 px-4 py-2 rounded-xl backdrop-blur-sm">
+<span>Unit 4: Statutory Interpretation &amp; BGB Principles</span>
+<span>45:12</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Instructor profile" data-alt="A portrait of a male legal expert in his late 40s, wearing a crisp white shirt and a dark navy blazer. He has a professional and trustworthy demeanor. The background is a blurred high-end law office with mahogany textures and warm accent lighting, fitting the authoritative and academic theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxwdi1TbLjOhDIDm9s-wqJ3wrBzljJ_6gNTQGkKixjQMzFqGQnasq9kW_fJIkZpOidQWZ0AlKeXUng268LJxuHQ7083ic-yAeolRWcsLRydeNvtNzZgEbmqQwKX5Xn-EdOJScaNZE8z2N3NCDrM_p06NIBS2_mS6S754H-F1UZ6_r6wzCagtt8LKufM0rQkQBOSR6iEaiRqpQR-dMFtGOhL0LZmmIQp-BWv4VNi7D1XtBZ3l7vlEdDnmoYu7RGwm28oZ01X_vMrMDU"/>
+</div>
+<div>
+<h4 class="text-label-md font-bold text-on-surface">Prof. Dr. Matthias Schmidt</h4>
+<p class="text-label-sm text-on-surface-variant">Expert in German Civil Law (BGB)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Current Module: Document Preview -->
+<div class="bg-surface rounded-3xl p-8 border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-headline-md font-headline-md text-primary">The Civil Code (BGB) and Contract Law</h3>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-xl text-label-md hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span> Download PDF
+                            </button>
+</div>
+<div class="bg-surface-container rounded-2xl p-8 min-h-[400px] relative">
+<div class="absolute inset-0 bg-white shadow-inner m-4 rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-10 text-on-surface-variant leading-relaxed">
+<h5 class="text-center font-bold text-on-surface mb-8">Bürgerliches Gesetzbuch (BGB)<br/>§ 145 Bindung an den Antrag</h5>
+<p class="mb-4">Wer einem anderen die Schließung eines Vertrags anträgt, ist an den Antrag gebunden, es sei denn, dass er die Gebundenheit ausgeschlossen hat.</p>
+<p class="mb-4 font-bold text-on-surface">§ 147 Annahmefrist</p>
+<p class="mb-4">(1) Der einem Anwesenden gemachte Antrag kann nur sofort angenommen werden. Dies gilt auch von einem mittels Fernsprecher oder einer sonstigen technischen Einrichtung sofortigen Antrags.</p>
+<p class="italic text-label-sm mt-8 border-t border-outline-variant pt-4">Annotation: Note the precise distinction between "Antrag" (Offer) and "Annahme" (Acceptance). The temporal element in § 147 is crucial for commercial litigation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar (4/12 cols) -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<!-- Key Terminology -->
+<div class="bg-surface-container-high rounded-3xl p-6 border border-outline-variant shadow-sm">
+<h3 class="text-headline-md font-headline-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="book">book</span> Key Terminology
+                        </h3>
+<div class="flex flex-col gap-4">
+<div class="bg-surface p-4 rounded-2xl border-l-4 border-primary">
+<h4 class="text-label-md font-bold text-primary mb-1">Willenserklärung</h4>
+<p class="text-body-md text-on-surface-variant text-sm">A declaration of intent that is directed toward the achievement of a legal consequence.</p>
+</div>
+<div class="bg-surface p-4 rounded-2xl border-l-4 border-primary/40">
+<h4 class="text-label-md font-bold text-on-surface mb-1">Rechtshängigkeit</h4>
+<p class="text-body-md text-on-surface-variant text-sm">The status of a case once it has been properly filed and served in a court of law (lis pendens).</p>
+</div>
+<div class="bg-surface p-4 rounded-2xl border-l-4 border-primary/40">
+<h4 class="text-label-md font-bold text-on-surface mb-1">Gefahrenübergang</h4>
+<p class="text-body-md text-on-surface-variant text-sm">The passing of risk from the seller to the buyer, usually at the point of delivery in sales law.</p>
+</div>
+<div class="bg-surface p-4 rounded-2xl border-l-4 border-primary/40">
+<h4 class="text-label-md font-bold text-on-surface mb-1">Schadenersatz</h4>
+<p class="text-body-md text-on-surface-variant text-sm">Legal compensation or damages awarded to a party for loss or injury caused by another.</p>
+</div>
+</div>
+</div>
+<!-- Case Study Interaction -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-3xl p-6 shadow-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="assignment">assignment</span>
+<h3 class="text-headline-md font-bold">Interactive Case Study</h3>
+</div>
+<p class="text-body-md opacity-90 mb-6">Scenario: A buyer orders a custom machine. The seller confirms via email, but the buyer's server is down for 48 hours. Is the contract valid under § 147 BGB?</p>
+<div class="flex flex-col gap-3">
+<button class="w-full text-left p-4 rounded-xl border border-white/20 hover:bg-white/10 transition-all text-sm">
+                                A) Yes, since it's a commercial transaction.
+                            </button>
+<button class="w-full text-left p-4 rounded-xl border border-primary bg-primary/20 transition-all text-sm">
+                                B) Valid upon delivery to the server's sphere of influence.
+                            </button>
+<button class="w-full text-left p-4 rounded-xl border border-white/20 hover:bg-white/10 transition-all text-sm">
+                                C) No, it requires physical signature.
+                            </button>
+</div>
+<button class="w-full mt-6 py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold hover:scale-[1.02] transition-transform">Submit Analysis</button>
+</div>
+<!-- Peer Network Quick Links -->
+<div class="bg-surface-bright rounded-3xl p-6 border border-outline-variant">
+<h4 class="text-label-md font-bold mb-4 uppercase text-on-surface-variant tracking-wider">Course Community</h4>
+<div class="flex -space-x-3 mb-4">
+<img alt="Peer" class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Profile of a female professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVzibbGPbgQIOlguLUOYG-hpLd_up3ngczvMOTKZgvstCYb73hxIIdi_Uhg_2DBo92RMc2BraXAtR5rprkSsTG4e8VYCGjl_9YCHkB_YoukS599vbhvGasBmhxHIrk3UmfF0eQvPME6bsp5xIihy13JvHcIv2W4rpbxjzgGaSaYmlfnEowHPBv1fgrd-Cat_Nbd1v5F6i9SmgqufYiKTb4a_b_6SQfAIXVn78MACHGuGKIaz-IaMt8Jr66a7UFhLi0WRc6kGxVwLDa"/>
+<img alt="Peer" class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Profile of a young business woman." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx1Nm6adzujtecY_qtcuroADvOuy0k9i6bA6J9oF5gArmoUmza1GUBRNpKyDBDD3oKyQj-meQeKs7bVgoJa8dl5W8KxwKGgWC3W9qoIYByfZ0qONg4B88t03mPUBUvhJlkuRGoHZ4zJy_gPaw3m7BSa_bjKHSrj9Mf7aDM2lYWyCofkdY0pE-CkJCQsAN-q5aNxCYVyIkY6bnQ7PFoR3LHXErOGl1bfKmunSmiHqpixmSobcI2ZTr_ReD9I_ynkFnVJXtNAgmAaaEY"/>
+<img alt="Peer" class="w-10 h-10 rounded-full border-2 border-surface" data-alt="Profile of a male professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE1L7Fi9RLD7mvtsdlVpqF7KenXaRx7NPZDTk_Zt4VlCAxopBWpHCKLmz22JExl-HkS3OpSk-pLrMfFmFaXEE9MGpJw2gU0eZMF5JZ8FQ0TSC_NXclFzLoMrtXBa1WuELwg8hVfEnLXGeYnZZcyV4GZlD0yDz7W5S_Il7hTBiFzfzu52f0qgFn9pud7IPsuBw25Zfh27jbEPfxtHyEqNpGXsgk6CYAdp1xj2Pd1hLFB1I6B15PCgxcdqUIssKo7fmAjMhj-z2Vck6"/>
+<div class="w-10 h-10 rounded-full bg-primary/10 border-2 border-surface flex items-center justify-center text-primary text-xs font-bold">+12</div>
+</div>
+<p class="text-body-md text-sm mb-4">3 Legal Experts are currently discussing this unit in the Peer Network.</p>
+<a class="text-primary font-bold text-label-md hover:underline flex items-center gap-1" href="#">Join Discussion <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-label-sm font-label-sm">Levels</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="menu_book" data-weight="fill">menu_book</span>
+<span class="text-label-sm font-label-sm">Learn</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-sm font-label-sm">Practice</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-label-sm font-label-sm">AI</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright border-t border-outline-variant text-on-surface-variant">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="text-label-md font-bold text-on-surface">Simple German Academy</span>
+<span class="text-label-sm">© 2024 Simple German Academy</span>
+</div>
+<div class="flex gap-6">
+<a class="text-label-sm hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm hover:text-primary transition-all" href="#">Contact Support</a>
+<a class="text-label-sm hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+</footer>
+<!-- Interactive Logic -->
+<script>
+        // Simple scale effect for interactive elements
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => el.classList.add('scale-95'));
+            el.addEventListener('mouseup', () => el.classList.remove('scale-95'));
+            el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+        });
+
+        // Theme check (simplified)
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // document.documentElement.classList.add('dark');
+        }
+    </script>
+</body></html>

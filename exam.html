@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final Mastery Exam | Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#eff4ff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-tint": "#005ac2",
+                      "surface-container": "#e5eeff",
+                      "on-error": "#ffffff",
+                      "primary": "#0058be",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface": "#f8f9ff",
+                      "outline": "#727785",
+                      "on-primary-fixed": "#001a42",
+                      "on-primary-container": "#fefcff",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#a36700",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#424754",
+                      "on-background": "#0b1c30",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#d3e4fe",
+                      "surface-bright": "#f8f9ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-container": "#00714d",
+                      "primary-fixed": "#d8e2ff",
+                      "outline-variant": "#c2c6d6",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#006c49",
+                      "on-surface": "#0b1c30",
+                      "background": "#f8f9ff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary-container": "#2170e4",
+                      "surface-dim": "#cbdbf5",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-surface": "#213145",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "inverse-primary": "#adc6ff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-primary-fixed-variant": "#004395",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-secondary-fixed": "#002113",
+                      "tertiary": "#825100",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "gutter": "16px",
+                      "container-margin-desktop": "40px",
+                      "container-margin-mobile": "20px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .option-card:hover {
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+        }
+        .active-ring {
+            box-shadow: 0 0 0 2px #0058be;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4 flex-1">
+<span class="text-headline-md font-headline-md font-bold text-primary hidden md:block">Simple German Academy</span>
+<span class="text-headline-md font-headline-md font-bold text-primary md:hidden">SGA</span>
+<div class="h-6 w-[1px] bg-outline-variant mx-2 hidden md:block"></div>
+<span class="text-label-md font-label-md text-on-surface-variant">Final Mastery Exam</span>
+</div>
+<div class="flex flex-col items-center flex-1 max-w-md px-4">
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-500" style="width: 45%;"></div>
+</div>
+<span class="text-label-sm font-label-sm mt-1 text-on-surface-variant">45% Progress (23/50)</span>
+</div>
+<div class="flex items-center justify-end gap-3 flex-1">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="font-mono font-bold text-on-surface">42:15</span>
+</div>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full transition-colors text-on-surface-variant">language</button>
+</div>
+</header>
+<main class="flex-1 mt-16 pb-24 flex flex-col md:flex-row max-w-[1400px] mx-auto w-full px-container-margin-mobile md:px-container-margin-desktop gap-8 pt-8">
+<!-- Sidebar: Question Navigation -->
+<aside class="hidden md:flex flex-col w-[320px] bg-surface-container-low rounded-xl p-6 h-fit sticky top-24 border border-outline-variant">
+<h3 class="text-label-md font-label-md text-on-surface mb-4">Exam Navigator</h3>
+<div class="grid grid-cols-5 gap-2">
+<!-- Javascript will populate 50 dots, simulating state -->
+<script>
+                    const aside = document.currentScript.parentElement;
+                    for(let i=1; i<=50; i++) {
+                        let stateClass = "bg-surface-container-highest text-on-surface-variant border border-transparent";
+                        if(i <= 22) stateClass = "bg-secondary text-on-secondary shadow-sm";
+                        if(i === 23) stateClass = "bg-primary-container text-on-primary-container border-2 border-primary font-bold active-ring";
+                        
+                        document.write(`<button class="h-10 w-10 rounded-lg flex items-center justify-center text-label-sm font-label-sm transition-all ${stateClass}">${i}</button>`);
+                    }
+                </script>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant flex flex-col gap-3">
+<div class="flex items-center gap-3 text-label-sm">
+<div class="w-3 h-3 rounded-sm bg-secondary"></div>
+<span class="text-on-surface-variant">Answered (22)</span>
+</div>
+<div class="flex items-center gap-3 text-label-sm">
+<div class="w-3 h-3 rounded-sm bg-primary-container border border-primary"></div>
+<span class="text-on-surface-variant">Current Question</span>
+</div>
+<div class="flex items-center gap-3 text-label-sm">
+<div class="w-3 h-3 rounded-sm bg-surface-container-highest"></div>
+<span class="text-on-surface-variant">Unanswered (27)</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<div class="flex-1 flex flex-col gap-section-gap">
+<!-- Question Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="bg-surface-variant text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded-full uppercase tracking-wider">Level C2 - Academic Proficiency</span>
+<h1 class="text-headline-md font-headline-md text-on-surface mt-4 leading-tight">
+                            Choose the most appropriate nuance for a formal academic debate.
+                        </h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2" title="Flag for review">flag</button>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl mb-8 border-l-4 border-outline italic">
+                    "Man muss bedenken, dass die vorliegenden Daten nur eine Momentaufnahme darstellen."
+                </div>
+<div class="flex flex-col gap-4">
+<label class="group relative flex items-center p-5 rounded-xl border border-outline-variant cursor-pointer hover:border-primary hover:bg-surface-container transition-all active:scale-[0.99] duration-150">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="nuance" type="radio"/>
+<div class="ml-4 flex flex-col">
+<span class="text-body-md font-medium text-on-surface">Es ist in Erwägung zu ziehen, dass die dargelegten Befunde lediglich einen temporären Charakter aufweisen.</span>
+<span class="text-label-sm text-on-surface-variant mt-1">Formal, high register, uses passive-substitutes for academic objectivity.</span>
+</div>
+</label>
+<label class="group relative flex items-center p-5 rounded-xl border-2 border-primary bg-surface-container-low cursor-pointer active:scale-[0.99] duration-150">
+<input checked="" class="w-5 h-5 text-primary border-primary focus:ring-primary" name="nuance" type="radio"/>
+<div class="ml-4 flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Es gilt zu berücksichtigen, dass die hier präsentierte Datenlage ausschließlich eine punktuelle Bestandsaufnahme widerspiegelt.</span>
+<span class="text-label-sm text-primary font-semibold mt-1">Precise, sophisticated academic phrasing appropriate for a thesis defense.</span>
+</div>
+</label>
+<label class="group relative flex items-center p-5 rounded-xl border border-outline-variant cursor-pointer hover:border-primary hover:bg-surface-container transition-all active:scale-[0.99] duration-150">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="nuance" type="radio"/>
+<div class="ml-4 flex flex-col">
+<span class="text-body-md font-medium text-on-surface">Wir müssen uns klarmachen, dass diese Zahlen nur zeigen, wie es genau in diesem Moment aussieht.</span>
+<span class="text-label-sm text-on-surface-variant mt-1">Correct grammar, but too colloquial for an academic context.</span>
+</div>
+</label>
+<label class="group relative flex items-center p-5 rounded-xl border border-outline-variant cursor-pointer hover:border-primary hover:bg-surface-container transition-all active:scale-[0.99] duration-150">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="nuance" type="radio"/>
+<div class="ml-4 flex flex-col">
+<span class="text-body-md font-medium text-on-surface">In Anbetracht der Tatsache, dass die Daten nur jetzt so sind, ist Vorsicht bei der Analyse geboten.</span>
+<span class="text-label-sm text-on-surface-variant mt-1">Slightly redundant; uses 'In Anbetracht' correctly but falls flat in the latter half.</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Tip/Helper Card -->
+<div class="bg-surface-container-high rounded-xl p-6 flex gap-4 items-start border border-outline-variant border-dashed">
+<span class="material-symbols-outlined text-tertiary text-[24px]">lightbulb</span>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface mb-1">C2 Nuance Tip</h4>
+<p class="text-body-md text-on-surface-variant">In academic German, nominalization and "Funktionsverbgefüge" (verb-noun combinations) are preferred over simple verbs to distance the observer from the observation.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-between items-center py-4 px-container-margin-mobile md:px-container-margin-desktop shadow-lg">
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-xl border border-outline text-on-surface-variant font-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Save &amp; Exit
+            </button>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex px-4 py-2.5 rounded-xl text-on-surface-variant font-label-md hover:text-primary transition-colors items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                Previous
+            </button>
+<button class="px-8 py-2.5 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm active:scale-95">
+                Next Question
+                <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</footer>
+<!-- Mobile Navigation Suppressed as per Task (Transactional Flow) -->
+<script>
+        // Micro-interaction: Scale down on click for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => button.classList.add('scale-95'));
+            button.addEventListener('mouseup', () => button.classList.remove('scale-95'));
+            button.addEventListener('mouseleave', () => button.classList.remove('scale-95'));
+        });
+
+        // Simple Countdown Timer simulation
+        let time = 42 * 60 + 15;
+        const timerSpan = document.querySelector('.font-mono');
+        setInterval(() => {
+            if(time > 0) {
+                time--;
+                const mins = Math.floor(time / 60);
+                const secs = time % 60;
+                timerSpan.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+        }, 1000);
+    </script>
+</body></html>

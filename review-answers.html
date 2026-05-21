@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simple German Academy - Final Mastery Exam Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c2c6d6;
+            border-radius: 10px;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-container": "#2170e4",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#001a42",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-container": "#fefcff",
+                        "outline": "#727785",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#005ac2",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container": "#e5eeff",
+                        "tertiary-container": "#a36700",
+                        "surface": "#f8f9ff",
+                        "secondary": "#006c49",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d6",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#004395",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#adc6ff",
+                        "on-background": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "primary": "#0058be",
+                        "tertiary": "#825100",
+                        "on-surface-variant": "#424754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "container-margin-mobile": "20px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-bold text-primary">Simple German Academy</span>
+<div class="hidden md:flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+<span>Results</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Review Answers</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="hidden sm:inline">Back to Results</span>
+</button>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container p-2 rounded-full transition-colors">local_fire_department</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container p-2 rounded-full transition-colors">language</span>
+</div>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A clean professional studio portrait of a young adult student looking confident and friendly. The background is a soft neutral gray to emphasize the learner's approachability. The lighting is bright and even, fitting a modern academic UI style with a calm and encouraging atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBphOMyc6vAeEZzkq4GynAw9UvWHOJyGbJCgVW1Ch2hPwnOdggARRSWURGkAcM00_fbzK6zS_bEuKvLfmXNkyjKs3CaJQXq0wKXRQv5iXSZtOPUZcho9pi4zIQYYHnQ9NAR8dluXl-TotbXZR8nDamPT_dav-UQwHH-JAQy6nQNxqKQzAuwPtzTqYAxuUhenRd5DuET57dlcw4Rf0OFCOONFn_iqYwdBBEClhXbqIuRN0V48Dot1BOWvCzKzOGAXM06KP3lr6gnqpma"/>
+</div>
+</header>
+<div class="flex flex-1 mt-16 overflow-hidden">
+<!-- Sidebar - Question Navigation -->
+<aside class="hidden md:flex flex-col w-[320px] bg-surface-container-low border-r border-outline-variant">
+<div class="p-6 border-b border-outline-variant">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-headline-md font-bold text-primary">Final Exam</h2>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-label-sm font-label-sm">C2 Mastery</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-display-lg font-extrabold text-primary">94</span>
+<span class="text-headline-md text-on-surface-variant">/ 100</span>
+</div>
+<div class="mt-4 w-full bg-outline-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 94%"></div>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">Pass mark: 80%</p>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-1">
+<!-- Question List Items -->
+<!-- Active Item -->
+<div class="flex items-start gap-3 px-4 py-3 rounded-xl bg-surface-container-highest border-l-4 border-primary group cursor-pointer transition-all">
+<div class="mt-0.5">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-primary">Question 24</span>
+<span class="text-[10px] uppercase font-bold text-secondary">Correct</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant truncate">Choose the most appropriate nuance for...</p>
+</div>
+</div>
+<!-- Correct Items -->
+<script>
+                    const container = document.currentScript.parentElement;
+                    for(let i=1; i<=50; i++) {
+                        if(i === 24) continue; // Skip active one
+                        const isCorrect = i % 15 !== 0; // Simulate some incorrects
+                        const isPartial = i === 15;
+                        
+                        const item = document.createElement('div');
+                        item.className = "flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-surface-container transition-all cursor-pointer";
+                        item.innerHTML = `
+                            <div class="mt-0.5">
+                                <span class="material-symbols-outlined ${isCorrect ? 'text-secondary' : isPartial ? 'text-tertiary' : 'text-error'}">${isCorrect ? 'check_circle' : isPartial ? 'emergency_home' : 'cancel'}</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-label-md font-label-md text-on-surface">Question ${i}</span>
+                                    <span class="text-[10px] uppercase font-bold ${isCorrect ? 'text-secondary' : isPartial ? 'text-tertiary' : 'text-error'}">${isCorrect ? 'Correct' : isPartial ? 'Partial' : 'Incorrect'}</span>
+                                </div>
+                                <p class="text-label-sm font-label-sm text-on-surface-variant truncate">German syntax and morphological...</p>
+                            </div>
+                        `;
+                        container.appendChild(item);
+                    }
+                </script>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto custom-scrollbar bg-surface-container-lowest">
+<div class="max-w-[800px] mx-auto w-full px-container-margin-mobile md:px-container-margin-desktop py-12">
+<!-- Question Header Section -->
+<div class="mb-section-gap">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm uppercase tracking-wider">Level C2</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Academic Proficiency</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-6">Choose the most appropriate nuance for a formal academic debate.</h1>
+<!-- Text Snippet -->
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded-xl italic text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        "In Anbetracht der vorliegenden Datenlage lässt sich schlussfolgern, dass die ökonomischen Auswirkungen _________."
+                    </div>
+</div>
+<!-- Answer Analysis Section -->
+<div class="space-y-4 mb-section-gap">
+<h3 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest mb-4">Answer Selection Analysis</h3>
+<!-- Option 1 (Incorrect) -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-center mb-3">
+<span class="text-label-md font-bold text-on-surface">A) ...nicht zu vernachlässigen sind. <button class="inline-flex items-center justify-center p-1.5 ml-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors group/audio" title="Listen"><span class="material-symbols-outlined text-[18px] text-primary">volume_up</span></button></span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-[10px] font-bold uppercase">Incorrect</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Linguistic Explanation: While grammatically sound, this phrase is slightly too common for a highly specialized academic paper. It lacks the precise analytical weight required for C2 level debate.</p>
+</div>
+<!-- Option 2 (Selected & Correct) -->
+<div class="p-5 rounded-xl border-2 border-secondary bg-secondary-container/20 card-shadow relative">
+<div class="absolute -top-3 left-4 bg-secondary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span> Selected &amp; Correct
+                        </div>
+<div class="flex justify-between items-center mt-2 mb-3">
+<span class="text-label-md font-bold text-on-surface">B) ...einer eingehenden Prüfung bedürfen. <button class="inline-flex items-center justify-center p-1.5 ml-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors group/audio" title="Listen"><span class="material-symbols-outlined text-[18px] text-primary">volume_up</span></button></span>
+</div>
+<p class="text-body-md text-on-surface">Linguistic Explanation: This choice uses the genitive case ("einer... Prüfung") and the formal verb "bedürfen," which is characteristic of the highest register of German academic writing. It implies a sophisticated necessity for further research.</p>
+</div>
+<!-- Option 3 (Incorrect) -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-center mb-3">
+<span class="text-label-md font-bold text-on-surface">C) ...ganz schön wichtig sind. <button class="inline-flex items-center justify-center p-1.5 ml-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-container-highest transition-colors group/audio" title="Listen"><span class="material-symbols-outlined text-[18px] text-primary">volume_up</span></button></span>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-[10px] font-bold uppercase">Incorrect</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Linguistic Explanation: This is colloquial German ("Umgangssprache"). "Ganz schön" should never be used in a formal academic context. It is a stylistic mismatch for the C2 Level.</p>
+</div>
+</div>
+<!-- Expert Feedback Section -->
+<div class="bg-primary-container/5 border border-primary-container/20 rounded-2xl p-8 mb-12">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">psychology</span>
+</div>
+<div>
+<h4 class="text-label-md font-bold text-primary">Linguistic Insight</h4>
+<p class="text-label-sm text-on-surface-variant">From Senior Instructor Hans Weber</p>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-body-md text-on-surface leading-relaxed">
+                            At the C2 level, German proficiency isn't just about grammar—it's about <strong>register consistency</strong>. In academic writing (Wissenschaftssprache), we prefer verbs that trigger the genitive case or complex prepositional phrases.
+                        </p>
+<p class="text-body-md text-on-surface leading-relaxed">
+                            The verb <em>bedürfen</em> is a prime example of a 'High German' construction. Using it correctly demonstrates that you understand not only the meaning of the words but also the social and professional context in which they are deployed.
+                        </p>
+</div>
+</div>
+<!-- Question Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-outline-variant">
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-primary text-primary hover:bg-primary-container/10 transition-all font-label-md text-label-md active:scale-95">
+<span class="material-symbols-outlined">chevron_left</span>
+                        Previous Question
+                    </button>
+<span class="text-label-md font-label-md text-on-surface-variant">24 of 50</span>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary text-white hover:opacity-90 transition-all font-label-md text-label-md active:scale-95">
+                        Next Question
+                        <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Mobile Footer Spacer -->
+<div class="h-20 md:hidden"></div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm font-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-label-sm font-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-sm font-label-sm">AI</span>
+</a>
+</nav>
+<!-- Footer (Standard) -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright border-t border-outline-variant z-10">
+<span class="text-label-md font-bold text-on-surface">Simple German Academy</span>
+<div class="flex gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">© 2024 Simple German Academy</span>
+</footer>
+<script>
+        // Simple Interaction Logic
+        document.querySelectorAll('aside .overflow-y-auto > div').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('aside .overflow-y-auto > div').forEach(i => {
+                    i.classList.remove('bg-surface-container-highest', 'border-l-4', 'border-primary');
+                    i.querySelector('.text-on-surface')?.classList.add('text-on-surface');
+                });
+                item.classList.add('bg-surface-container-highest', 'border-l-4', 'border-primary');
+            });
+        });
+    </script>
+</body></html>

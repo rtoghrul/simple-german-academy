@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Tutor - Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #d3e4fe;
+            border-radius: 10px;
+        }
+    </style>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#002113",
+                      "on-background": "#0b1c30",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary-fixed-dim": "#adc6ff",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary": "#006c49",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#2170e4",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-secondary-container": "#00714d",
+                      "secondary-container": "#6cf8bb",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#005236",
+                      "background": "#f8f9ff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "primary-fixed": "#d8e2ff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#a36700",
+                      "on-tertiary-container": "#fffbff",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "on-surface-variant": "#424754",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#001a42",
+                      "on-primary-container": "#fefcff",
+                      "tertiary": "#825100",
+                      "primary": "#0058be",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-surface": "#0b1c30",
+                      "inverse-primary": "#adc6ff",
+                      "surface-variant": "#d3e4fe",
+                      "surface-tint": "#005ac2",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline": "#727785",
+                      "surface-container-high": "#dce9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-bright": "#f8f9ff",
+                      "outline-variant": "#c2c6d6",
+                      "inverse-on-surface": "#eaf1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "gutter": "16px",
+                      "container-margin-mobile": "20px",
+                      "container-margin-desktop": "40px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-screen w-[280px] bg-surface-container-low dark:bg-surface-container shadow-sm border-r border-outline-variant z-40">
+<div class="p-6 flex flex-col gap-6 h-full">
+<div class="style_brand_logo text-headline-md font-headline-md font-bold text-primary">Simple German Academy</div>
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional and friendly male avatar portrait with a clean, blurred academic background. The lighting is soft and natural, emphasizing a approachable and helpful demeanor. The aesthetic is modern and minimalist with a cool color palette of whites and soft blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAQu6yS_BxEeSQWDE3PuhTzJaQZMISqXVb0xxA85tTIy2Tao0JiQKAzX5c7Lg-Bl4aM4IcCPEMr1_gqL8fSleZ0lhEHrm3VP-wIRpq8b8DI9VVlimkSUz039TUpDo_0VtvZIrU0Nbe7fUIv3WOKrTroSFvMubdCtOpCMEdruu3LoEtXjrzvb9BKzSIXJ0ofMdpuA43EGJlAm5K27Pq2hyN_dKGiHBw5thVhdcP0xJ1ff5GbW8ZphkQDQlGxwY37ZSSC7kaP_-7VTpP"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Wilkommen</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Level A2 - Intermediate</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="grammar.html">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim font-bold border-l-4 border-primary dark:border-primary-fixed-dim bg-surface-container-high transition-transform translate-x-1" href="#">
+<span class="material-symbols-outlined fill-icon" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-label-md">AI Tutor</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-3 px-4 rounded-xl font-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                Upgrade to Pro
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-[280px] h-full flex flex-col bg-background relative">
+<!-- TopAppBar (Contextual) -->
+<header class="h-16 flex items-center justify-between px-container-margin-mobile md:px-container-margin-desktop bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<div>
+<h1 class="text-label-md font-bold text-on-surface">AI German Tutor</h1>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span class="text-label-sm text-secondary">Online</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors md:hidden">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+</div>
+</header>
+<!-- Split Layout Wrapper -->
+<div class="flex-1 flex overflow-hidden flex-col lg:flex-row">
+<!-- Left Side: Chat Area -->
+<section class="flex-1 flex flex-col min-w-0 border-r border-outline-variant bg-surface overflow-hidden">
+<!-- Chat History -->
+<div class="flex-1 overflow-y-auto p-6 chat-scroll space-y-6">
+<!-- AI Message: Greeting -->
+<div class="flex gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-high p-4 rounded-2xl rounded-tl-none shadow-sm">
+<p class="text-body-md font-bold text-primary mb-1">Guten Tag! Wie kann ich dir heute helfen?</p>
+<p class="text-label-md text-on-surface-variant italic">Good day! How can I help you today?</p>
+</div>
+<span class="text-label-sm text-outline ml-1">10:02 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-row-reverse gap-3 max-w-[85%] ml-auto">
+<div class="w-8 h-8 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">person</span>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none shadow-md">
+<p class="text-body-md">Ich bin Hunger.</p>
+</div>
+<span class="text-label-sm text-outline mr-1">10:03 AM</span>
+</div>
+</div>
+<!-- AI Message: Correction -->
+<div class="flex gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-high p-4 rounded-2xl rounded-tl-none shadow-sm space-y-3">
+<div class="flex items-center gap-2 px-3 py-1 bg-error-container text-on-error-container rounded-lg w-fit">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="text-label-sm font-bold">Correction needed</span>
+</div>
+<p class="text-body-md">In German, we don't say "Ich bin Hunger" (I am hunger). We say:</p>
+<p class="text-headline-md font-bold text-secondary">"Ich habe Hunger"</p>
+<p class="text-label-md text-on-surface-variant">Literally: "I have hunger". The verb <b>haben</b> is used for physiological states like hunger, thirst, or fear.</p>
+<div class="pt-2 border-t border-outline-variant flex gap-2">
+<button class="text-label-md text-primary font-bold hover:underline">Try again</button>
+<span class="text-outline">•</span>
+<button class="text-label-md text-primary font-bold hover:underline">View rule</button>
+</div>
+</div>
+<span class="text-label-sm text-outline ml-1">10:04 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-row-reverse gap-3 max-w-[85%] ml-auto">
+<div class="w-8 h-8 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">person</span>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none shadow-md">
+<p class="text-body-md">Ich habe Hunger. Richtig?</p>
+</div>
+<span class="text-label-sm text-outline mr-1">10:04 AM</span>
+</div>
+</div>
+<!-- AI Message: Success -->
+<div class="flex gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-high p-4 rounded-2xl rounded-tl-none shadow-sm">
+<p class="text-body-md font-bold text-secondary">Richtig! Gut gemacht. 🌟</p>
+<p class="text-body-md mt-2">Would you like to practice ordering food today? It's a great way to use these expressions.</p>
+</div>
+<span class="text-label-sm text-outline ml-1">10:05 AM</span>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-4 bg-surface border-t border-outline-variant">
+<div class="max-w-4xl mx-auto flex items-end gap-3 bg-surface-container-low p-2 rounded-2xl border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 py-2 resize-none text-body-md" placeholder="Schreibe eine Nachricht..." rows="1"></textarea>
+<div class="flex items-center gap-1 mb-1 mr-1">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="bg-primary text-on-primary p-2 rounded-xl hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<p class="text-center text-[11px] text-outline mt-2">AI can make mistakes. Check important information.</p>
+</div>
+</section>
+<!-- Right Side: Tutor Tools & Context -->
+<aside class="w-full lg:w-80 p-6 bg-surface-container-lowest flex flex-col gap-6 overflow-y-auto">
+<!-- Current Focus -->
+<div class="bg-white p-5 rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-label-md font-bold text-on-surface">Current Focus</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">track_changes</span>
+</div>
+<div class="p-3 bg-surface-container-high rounded-lg">
+<p class="text-label-sm font-bold text-primary">A2 - Intermediate</p>
+<p class="text-body-md font-bold text-on-surface">Lesson 4: Dining Out</p>
+<div class="mt-2 w-full bg-outline-variant h-1.5 rounded-full">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="space-y-3">
+<h3 class="text-label-md font-bold text-on-surface-variant px-1 uppercase tracking-wider">Quick Actions</h3>
+<div class="grid grid-cols-1 gap-2">
+<button class="flex items-center gap-3 p-3 bg-white border border-outline-variant rounded-xl hover:bg-primary-container hover:text-on-primary-container transition-all text-left group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">menu_book</span>
+<span class="text-label-md">Explain Grammar Point</span>
+</button>
+<button class="flex items-center gap-3 p-3 bg-white border border-outline-variant rounded-xl hover:bg-primary-container hover:text-on-primary-container transition-all text-left group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">translate</span>
+<span class="text-label-md">Translate Sentence</span>
+</button>
+<button class="flex items-center gap-3 p-3 bg-white border border-outline-variant rounded-xl hover:bg-primary-container hover:text-on-primary-container transition-all text-left group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">style</span>
+<span class="text-label-md">Vocabulary Helper</span>
+</button>
+<button class="flex items-center gap-3 p-3 bg-white border border-outline-variant rounded-xl hover:bg-primary-container hover:text-on-primary-container transition-all text-left group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">theater_comedy</span>
+<span class="text-label-md">Roleplay Scenarios</span>
+</button>
+</div>
+</div>
+<!-- Daily Challenge -->
+<div class="bg-tertiary-container text-on-tertiary-container p-5 rounded-xl shadow-md relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[80px]">star</span>
+</div>
+<h3 class="text-label-md font-bold flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[18px] fill-icon">emoji_events</span>
+                        Daily Challenge
+                    </h3>
+<p class="text-body-md font-medium">Ask the AI 3 questions about modal verbs.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-label-sm font-bold">Progress: 1/3</span>
+<div class="flex gap-1">
+<span class="w-6 h-1 rounded-full bg-on-tertiary-container"></span>
+<span class="w-6 h-1 rounded-full bg-on-tertiary-container opacity-30"></span>
+<span class="w-6 h-1 rounded-full bg-on-tertiary-container opacity-30"></span>
+</div>
+</div>
+</div>
+<!-- Correction Log -->
+<div class="bg-white p-5 rounded-xl border border-outline-variant">
+<h3 class="text-label-md font-bold text-on-surface mb-4">Correction Log</h3>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<div class="p-1.5 bg-error-container text-error rounded flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</div>
+<div>
+<p class="text-label-sm text-error line-through">Ich bin Hunger</p>
+<p class="text-label-sm font-bold text-secondary">Ich habe Hunger</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 bg-secondary-container text-secondary rounded flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<p class="text-label-sm">Subject-Verb Agreement</p>
+<p class="text-label-sm font-bold text-secondary">Perfect!</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-2 text-label-sm text-primary font-bold border border-primary rounded-lg hover:bg-surface-container-low transition-colors">
+                        View Full History
+                    </button>
+</div>
+</aside>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined fill-icon">smart_toy</span>
+<span class="text-label-sm font-bold">AI</span>
+</a>
+</nav>
+</main>
+<script>
+        // Simple auto-resize for textarea
+        const tx = document.getElementsByTagName("textarea");
+        for (let i = 0; i < tx.length; i++) {
+          tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+          tx[i].addEventListener("input", OnInput, false);
+        }
+
+        function OnInput() {
+          this.style.height = "auto";
+          this.style.height = (this.scrollHeight) + "px";
+        }
+
+        // Add small animation to correction badge
+        document.addEventListener('DOMContentLoaded', () => {
+            const correctionBadge = document.querySelector('.bg-error-container');
+            if (correctionBadge) {
+                correctionBadge.classList.add('animate-bounce');
+                setTimeout(() => {
+                    correctionBadge.classList.remove('animate-bounce');
+                }, 2000);
+            }
+        });
+    </script>
+</body></html>

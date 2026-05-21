@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simple German Academy - Lesson: Introducing Yourself</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#00714d",
+                      "surface-bright": "#f8f9ff",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface": "#f8f9ff",
+                      "outline": "#727785",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary": "#825100",
+                      "on-primary-fixed-variant": "#004395",
+                      "inverse-surface": "#213145",
+                      "on-background": "#0b1c30",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-error-container": "#93000a",
+                      "secondary": "#006c49",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#a36700",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "secondary-fixed": "#6ffbbe",
+                      "secondary-fixed-dim": "#4edea3",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-container": "#fefcff",
+                      "inverse-primary": "#adc6ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-tertiary-fixed": "#2a1700",
+                      "primary": "#0058be",
+                      "on-surface": "#0b1c30",
+                      "on-secondary-fixed": "#002113",
+                      "primary-container": "#2170e4",
+                      "surface-container-highest": "#d3e4fe",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c2c6d6",
+                      "secondary-container": "#6cf8bb",
+                      "background": "#f8f9ff",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-fixed": "#001a42",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#424754",
+                      "surface-tint": "#005ac2",
+                      "surface-container": "#e5eeff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-tertiary-container": "#fffbff",
+                      "primary-fixed": "#d8e2ff",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#d3e4fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin-desktop": "40px",
+                      "container-margin-mobile": "20px",
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .lesson-canvas {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .zebra-table tr:nth-child(even) {
+            background-color: rgba(66, 71, 84, 0.03);
+        }
+        .dialogue-bubble-left::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 16px;
+            width: 0; height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+        .dialogue-bubble-right::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 16px;
+            width: 0; height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #0058be;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Simple German Academy</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">local_fire_department</button>
+<button class="material-symbols-outlined p-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">language</button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional studio headshot of a young man with a friendly expression, soft cinematic lighting, neutral background, modern clean aesthetic consistent with a premium educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtzZwBFjv9MUY5sX9B8-tcKKlgU2OZm5oIt3BgZp3TvAqq-_tc1cVNoDHK_40pxFdF-AEsnxQn9sthNhqgcxbHuy3U-SgX76vDtnctKv4eICUsur1kR8znw2qHlVpOLj9YEjI5L4lqaRnmxOFM-FsVe0nEoccNFD1DtQT-VV4lTvbaWg15K9SmWAiWWJkYtD7Dr71FbYh5G8uclXQA4jAUlzhl8ShcAQIR-VdsU1DIxqMICIe--O1MZwaZ1Zdp6_kOtAlWknPvOf4J"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-[280px] fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container shadow-sm border-r border-outline-variant z-40">
+<div class="p-6 mt-16">
+<div class="flex items-center gap-3 mb-8">
+<img alt="User avatar" class="w-12 h-12 rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHEKCgISeW4xm9u3ZkfJ76-Gshc5ubiathVCX-87vKoZxNgJFEe35P1ODBU-CYjuhv-F22kT_mhpcpAUcEHy44pLvioaZDLCi2Syh_YlsrDGlZKpe9fzC7WFl-rcPjuNbW_2Uh2wWiJ46LBJ9uQPmDXO5Gq4QYUkvaGoDtkqyGUTWh5RVBWS_qiSRU1ghlnhA9g-R2F5FKdHFZgjhp_Zxsmi6wv8-9jP4Edv7wRW6GDx519KlEYEoSFx4YcRailL_mhwoZgowMug-8"/>
+<div>
+<h3 class="text-label-md font-label-md font-bold text-primary">Wilkommen</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Level A2 - Intermediate</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-md font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim font-bold border-l-4 border-primary dark:border-primary-fixed-dim bg-surface-container-high rounded-r-lg translate-x-1 transition-transform" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-md font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-md font-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="grammar.html">
+<span class="material-symbols-outlined">gavel</span>
+<span class="text-label-md font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-md font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-md font-label-md">AI Tutor</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-xl hover:opacity-90 transition-opacity">Upgrade to Pro</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-24 pb-20 md:pb-8 px-container-margin-mobile md:ml-[280px] md:px-container-margin-desktop">
+<div class="lesson-canvas">
+<!-- Breadcrumb & Header -->
+<div class="mb-8">
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="hover:text-primary cursor-pointer">Levels</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer text-primary font-bold">A1: Beginner</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-2">Introducing Yourself</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">flag</span>
+                            Goal: Learn how to greet people and say your name.
+                        </p>
+</div>
+<label class="flex items-center gap-2 cursor-pointer group"><input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/><span class="text-label-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors">Mark as complete</span></label><div class="flex items-center gap-2 bg-surface-container p-2 rounded-xl">
+<div class="w-32 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-secondary"></div>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface-variant">33% Complete</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Lesson Modules -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Intro Section (Large Card) -->
+<section class="md:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)]">
+<h2 class="text-headline-md font-headline-md text-primary mb-4">The Basics of Greeting</h2>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed mb-10">
+                        In German, introducing yourself starts with a friendly greeting followed by your name and origin. Unlike some languages, German formal and informal greetings are quite distinct, but for now, we'll focus on the standard ways used in daily life. 
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-secondary">
+<h4 class="text-label-md font-bold mb-1">Culture Tip</h4>
+<p class="text-label-md font-label-md">Germans value direct eye contact during greetings. A firm handshake is standard in professional settings!</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<h4 class="text-label-md font-bold mb-1">Key Phrase</h4>
+<p class="text-label-md font-label-md">"Freut mich!" (Pleased to meet you) is the perfect follow-up to an introduction.</p>
+</div>
+</div>
+</section>
+<!-- Vocabulary List (Sidebar-like Card) -->
+<section class="md:col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)]">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-6">Vocabulary</h2>
+<div class="space-y-4">
+<!-- Vocab Item -->
+<div class="group flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant border-b border-outline-variant pb-4 pt-1">
+<div>
+<h3 class="text-label-md font-bold text-on-surface">Hallo</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Hello</p>
+</div>
+<button aria-label="Play audio" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant border-b border-outline-variant pb-4 pt-1">
+<div>
+<h3 class="text-label-md font-bold text-on-surface">Guten Morgen</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Good Morning</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant border-b border-outline-variant pb-4 pt-1">
+<div>
+<h3 class="text-label-md font-bold text-on-surface">Ich heiße...</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">My name is...</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant pt-1">
+<div>
+<h3 class="text-label-md font-bold text-on-surface">Ich komme aus...</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">I come from...</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Grammar Block (Wide Table) -->
+<section class="md:col-span-12 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)]">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-6">Grammar Focus: Verbs</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left zebra-table">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-4 px-6 text-label-md font-label-md uppercase tracking-wider text-on-surface-variant">Pronoun</th>
+<th class="py-4 px-6 text-label-md font-label-md uppercase tracking-wider text-on-surface-variant">heißen</th>
+<th class="py-4 px-6 text-label-md font-label-md uppercase tracking-wider text-on-surface-variant">kommen</th>
+<th class="py-4 px-6 text-label-md font-label-md uppercase tracking-wider text-on-surface-variant">wohnen</th>
+<th class="py-4 px-6 text-label-md font-label-md uppercase tracking-wider text-on-surface-variant">sprechen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="py-4 px-6 font-bold text-primary">Ich (I)</td>
+<td class="py-4 px-6">heiß<span class="text-secondary font-bold">e</span></td>
+<td class="py-4 px-6">komm<span class="text-secondary font-bold">e</span></td>
+<td class="py-4 px-6">wohn<span class="text-secondary font-bold">e</span></td>
+<td class="py-4 px-6">sprech<span class="text-secondary font-bold">e</span></td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-bold text-primary">Du (You)</td>
+<td class="py-4 px-6">heiß<span class="text-secondary font-bold">t</span></td>
+<td class="py-4 px-6">komm<span class="text-secondary font-bold">st</span></td>
+<td class="py-4 px-6">wohn<span class="text-secondary font-bold">st</span></td>
+<td class="py-4 px-6">sprich<span class="text-secondary font-bold">st</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Dialogue Box (Center Focused) -->
+<section class="md:col-span-7 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] flex flex-col">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-8">Dialogue: First Encounter</h2>
+<div class="space-y-8 flex-grow">
+<!-- Anna -->
+<div class="flex gap-4 items-start">
+<img class="w-12 h-12 rounded-full shadow-sm" data-alt="A medium shot of a cheerful young woman with blonde hair, dressed in a bright yellow casual top, standing in a sunlit German park with trees in soft focus. The lighting is warm and natural, evoking a friendly and welcoming educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0w1dV13j0if--Gh7P2El0v5Ag6uru2AAkcR3IT6aZf6Ds2ZA-ASw3mZRmTNNbq7vaMucvJpsr3R-2z3qXy37mH5-XbFNDijOAUDpwKlauqV-tZoQJQ5efQw8MHje2IJf6nvsaPBzhgxTKnr8MI8zq1nJQ4NsD4a463L6LCJlraUXTw-bH0VJNW-hyPuMjWVyYvaHw47qFWON1_NmYECf4UF0QraW4yJHzloGoWRRWZmX_ZOrtKdTFhTQQFQbqRl_k3d5FZm-vA3GM"/>
+<div class="relative dialogue-bubble-left bg-surface-container p-4 rounded-xl max-w-[80%] rounded-2xl">
+<p class="text-label-md font-bold text-primary mb-1">Anna</p>
+<p class="text-body-md font-body-md italic text-on-surface">"Hallo! Ich heiße Anna. Und du?"</p>
+</div>
+</div>
+<!-- Max -->
+<div class="flex gap-4 items-start justify-end text-right">
+<div class="relative dialogue-bubble-right bg-primary p-4 rounded-xl max-w-[80%] rounded-2xl shadow-lg">
+<p class="text-label-md font-bold text-on-primary mb-1">Max</p>
+<p class="text-body-md font-body-md italic text-on-primary">"Guten Morgen, Anna. Ich heiße Max. Ich komme aus Berlin."</p>
+</div>
+<img class="w-12 h-12 rounded-full shadow-sm" data-alt="A portrait of a young man with glasses and short dark hair, smiling warmly. He is wearing a blue hoodie. The background shows a modern minimalist workspace in soft focus, with light streaming through a window, fitting the premium UI design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBiIhHxHLqVUI_9_B5wv2asfMul-hIwDcjHvVW4Btf81aKYfE_5g6_Ixc8WWngUA7ss_Ml4s-wTCgqlhwP8GoeGC0aCLsyQFOAb_RzvFidR_hhEuqdO9KxtuSQXMiYcGpgdcKDhgQs1sH-Ofm1iDiGGh7MUTovQ0A_EWF8zlt6ZSi9wzI9qWidK4w3S1iLoCwUjyLLZ8sIECv7jEzdDru55HeSh5NCoq_5Wd-pVPkcEivBAtb1UUxT05H9pEi9hz9_-qLnwfYS_wH"/>
+</div>
+</div>
+<button class="mt-8 flex items-center justify-center gap-2 text-primary font-bold hover:underline">
+<span class="material-symbols-outlined">translate</span> Show Translation
+                    </button>
+</section>
+<!-- Mini Quiz (Interactive Card) -->
+<section class="md:col-span-5 p-8 rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] border-2 border-primary-container bg-surface-container-low">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-sm font-bold">QUIZ</span>
+<span class="text-label-sm text-on-surface-variant font-bold">Question 1 of 1</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-6">How do you say "My name is"?</h3>
+<div class="space-y-3" id="quiz-container">
+<button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-surface-container hover:border-primary hover:bg-surface-container-low transition-all text-body-md font-body-md" onclick="handleQuiz(this, false)">
+                            Ich komme aus...
+                        </button>
+<button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-surface-container hover:border-primary hover:bg-surface-container-low transition-all text-body-md font-body-md" onclick="handleQuiz(this, true)">
+                            Ich heiße...
+                        </button>
+<button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-surface-container hover:border-primary hover:bg-surface-container-low transition-all text-body-md font-body-md" onclick="handleQuiz(this, false)">
+                            Ich wohne in...
+                        </button>
+</div>
+<div class="mt-6 hidden" id="quiz-feedback">
+<div class="p-4 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined" id="feedback-icon"></span>
+<p class="text-label-md font-bold" id="feedback-text"></p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Action Section -->
+<div class="mt-section-gap flex flex-col md:flex-row items-center justify-between border-t border-outline-variant pt-8 mb-12">
+<div class="flex items-center gap-4 mb-4 md:mb-0">
+<button class="flex items-center gap-2 px-6 py-3 border border-outline text-on-surface font-bold rounded-xl hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">arrow_back</span> Previous Lesson
+                    </button>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-body-md font-body-md text-on-surface-variant hidden md:block">Ready to continue?</p>
+<button class="flex items-center gap-2 px-10 py-4 bg-primary text-on-primary font-bold rounded-xl hover:shadow-lg transition-all scale-105 active:scale-95">
+                        Next Lesson: Ask Questions <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface dark:bg-surface-container border-t border-outline-variant shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 scale-90 transition-all" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm font-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-sm font-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-sm font-label-sm">AI</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright dark:bg-surface-dim border-t border-outline-variant md:ml-[280px]">
+<div class="text-label-md font-bold text-on-surface">© 2024 Simple German Academy</div>
+<div class="flex gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+</footer>
+<script>
+        function handleQuiz(btn, isCorrect) {
+            const options = document.querySelectorAll('.quiz-option');
+            const feedback = document.getElementById('quiz-feedback');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackText = document.getElementById('feedback-text');
+
+            // Reset all
+            options.forEach(opt => {
+                opt.classList.remove('border-secondary', 'bg-secondary-container', 'border-error', 'bg-error-container', 'scale-95');
+                opt.classList.add('border-surface-container');
+            });
+
+            feedback.classList.remove('hidden');
+            
+            if(isCorrect) {
+                btn.classList.add('border-secondary', 'bg-secondary-container');
+                feedback.firstElementChild.className = "p-4 rounded-xl flex items-center gap-3 bg-secondary-container text-on-secondary-container";
+                feedbackIcon.innerText = "check_circle";
+                feedbackText.innerText = "Super! That is correct. 'Ich heiße' means 'I am called' or 'My name is'.";
+            } else {
+                btn.classList.add('border-error', 'bg-error-container');
+                feedback.firstElementChild.className = "p-4 rounded-xl flex items-center gap-3 bg-error-container text-on-error-container";
+                feedbackIcon.innerText = "cancel";
+                feedbackText.innerHTML = 'Not quite. <a href="#" class="underline font-bold">Why?</a> "Ich heiße" is the verb used for names.';
+            }
+            
+            btn.classList.add('scale-95');
+        }
+
+        // Simple Audio Feedback Interaction
+        document.querySelectorAll('button[aria-label="Play audio"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.add('scale-125');
+                setTimeout(() => btn.classList.remove('scale-125'), 200);
+            });
+        });
+    </script>
+</body></html>

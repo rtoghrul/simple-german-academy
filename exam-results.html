@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#004395",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#6cf8bb",
+                    "primary": "#0058be",
+                    "on-tertiary-fixed": "#2a1700",
+                    "secondary": "#006c49",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#2170e4",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-tint": "#005ac2",
+                    "surface-container": "#e5eeff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#adc6ff",
+                    "primary-fixed": "#d8e2ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-surface-variant": "#424754",
+                    "primary-fixed-dim": "#adc6ff",
+                    "tertiary": "#825100",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "tertiary-container": "#a36700",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface": "#0b1c30",
+                    "outline": "#727785",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fffbff",
+                    "outline-variant": "#c2c6d6",
+                    "on-primary-fixed": "#001a42",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "container-margin-mobile": "20px",
+                    "container-margin-desktop": "40px",
+                    "base": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .circular-progress {
+            background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                        conic-gradient(#0058be 94%, #d8e2ff 0);
+        }
+        .canvas-bg {
+            background: radial-gradient(circle at 10% 20%, rgba(0, 88, 190, 0.03) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 108, 73, 0.03) 0%, transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md canvas-bg min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary">Simple German Academy</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg font-label-md text-label-md" href="#">Levels</a>
+<a class="text-primary font-bold font-label-md text-label-md" href="#">Dashboard</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container p-2 rounded-full transition-colors">local_fire_department</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container p-2 rounded-full transition-colors">language</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional and clean studio portrait of a young adult with a friendly expression. The lighting is soft and high-key, emphasizing a modern light-mode aesthetic with bright white and subtle blue tones. The background is a minimalist, neutral gray that conveys a sense of academic focus and personal achievement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE3TGPrSX6HOcojh0EtCoI17cDB_kvUgEWY9sYoTLpSX8ao-d33VhalgdkiMBCguemLC1wA0q5O8va4pljn-2rkP-BknYbZlu-v-LaMm7N0yWyq9IvUh19Tnul6vUNhK64GCLHmh7o9LcOJVPdemqvxBvq1nxYhgQekypUnzcGJFE_LBYNDhPftTqtzcthohYhI5SRe1mxVL85sLw46eaOwpDA5O8W1dFWuy8shwoPovYc0BBRwP_nrt_hN_EeLg57Qmg6ggYFZJCd"/>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-section-gap px-container-margin-mobile md:px-container-margin-desktop max-w-[1100px] mx-auto w-full">
+<!-- Hero Achievement Section -->
+<section class="text-center mb-section-gap animate-in fade-in duration-700 slide-in-from-bottom-4">
+<div class="relative inline-block mb-6">
+<div class="circular-progress w-48 h-48 md:w-56 md:h-56 rounded-full flex items-center justify-center shadow-lg">
+<div class="text-center">
+<span class="block font-display-lg text-display-lg text-primary">94</span>
+<span class="block font-label-md text-label-md text-on-surface-variant">von 100</span>
+</div>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container p-3 rounded-full shadow-md animate-bounce">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 text-on-background">Glückwunsch! You've Mastered German</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">You have completed the Final Mastery Exam with exceptional scores. You are now officially recognized at the C2 Mastery Level.</p>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Certification Preview -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-outline-variant relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">military_tech</span>
+</div>
+<div class="relative z-10 border-4 border-double border-primary/20 p-6 h-full flex flex-col items-center text-center">
+<div class="mb-4">
+<span class="text-label-md font-label-md text-primary tracking-widest uppercase">Zertifikat der Beherrschung</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">Mastery Level C2</h2>
+<div class="w-16 h-0.5 bg-outline-variant mb-6"></div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Dies bescheinigt, dass</p>
+<p class="font-headline-md text-headline-md text-primary mb-2">Maximilian Schmidt</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">die Abschlussprüfung der Simple German Academy erfolgreich bestanden hat.</p>
+<div class="flex justify-between w-full mt-auto pt-6 border-t border-outline-variant">
+<div class="text-left">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Datum</p>
+<p class="text-label-md font-label-md">24. Mai 2024</p>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-on-surface-variant">ID-Nummer</p>
+<p class="text-label-md font-label-md">SGA-8829-C2</p>
+</div>
+</div>
+<div class="flex gap-4 mt-8 w-full">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined">download</span>
+                            Download PDF
+                        </button>
+<button class="flex-1 border border-primary text-primary py-3 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container transition-all active:scale-95">
+<span class="material-symbols-outlined">share</span>
+                            LinkedIn
+                        </button>
+</div>
+</div>
+</div>
+<!-- Performance Breakdown -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface-container rounded-xl p-6 shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-outline-variant">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Skill Breakdown
+                    </h3>
+<div class="space-y-6">
+<!-- Listening -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Listening</span>
+<span class="font-label-md text-label-md text-primary">98%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<!-- Reading -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Reading</span>
+<span class="font-label-md text-label-md text-primary">92%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Grammar -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Grammar</span>
+<span class="font-label-md text-label-md text-primary">90%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<!-- Vocabulary -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Vocabulary</span>
+<span class="font-label-md text-label-md text-primary">96%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 96%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- CEFR Level Validation -->
+<div class="bg-primary text-on-primary rounded-xl p-6 shadow-lg overflow-hidden relative">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-[80px]">flag</span>
+</div>
+<h3 class="font-label-md text-label-md mb-4 uppercase tracking-wider opacity-80">CEFR Proficiency</h3>
+<div class="flex justify-between items-end relative">
+<div class="flex flex-col items-center opacity-40">
+<span class="text-label-sm font-label-sm mb-1">A1</span>
+<div class="w-8 h-1 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex flex-col items-center opacity-40">
+<span class="text-label-sm font-label-sm mb-1">A2</span>
+<div class="w-8 h-2 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex flex-col items-center opacity-40">
+<span class="text-label-sm font-label-sm mb-1">B1</span>
+<div class="w-8 h-3 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex flex-col items-center opacity-40">
+<span class="text-label-sm font-label-sm mb-1">B2</span>
+<div class="w-8 h-4 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex flex-col items-center opacity-40">
+<span class="text-label-sm font-label-sm mb-1">C1</span>
+<div class="w-8 h-5 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex flex-col items-center scale-125">
+<span class="text-label-md font-bold mb-1">C2</span>
+<div class="w-8 h-8 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</div>
+<p class="mt-4 font-body-md text-body-md">You've reached the highest level of European language standards.</p>
+</div>
+</div>
+</div>
+<!-- Next Steps / Alumni Section -->
+<section class="mt-section-gap">
+<h2 class="font-headline-md text-headline-md mb-6">What's Next for You?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Alumni Community -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-2">Join the Alumni</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Connect with fellow C2 graduates and practice your business German.</p>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Enter Community <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+<!-- Advanced Workshops -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-2">Advanced Workshops</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Master regional dialects and specialized technical German.</p>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View Workshops <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+<!-- Review Exam -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-[20px] mb-2">Review Answers</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Go through your exam and see detailed explanations for every question.</p>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Exam Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright border-t border-outline-variant">
+<div class="flex flex-col gap-1 items-center md:items-start">
+<span class="text-label-md font-bold text-on-surface">Simple German Academy</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">© 2024 Simple German Academy</span>
+</div>
+<div class="flex gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Contact Support</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Methodology</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm font-label-sm">Levels</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-sm font-label-sm">Board</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-sm font-label-sm">AI</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction: Confetti-like atmospheric effect on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const colors = ['#0058be', '#006c49', '#825100', '#2170e4'];
+            const container = document.body;
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = '8px';
+                confetti.style.height = '8px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.borderRadius = '2px';
+                confetti.style.zIndex = '1';
+                confetti.style.opacity = '0.6';
+                confetti.style.pointerEvents = 'none';
+                container.appendChild(confetti);
+
+                const duration = 2000 + Math.random() * 3000;
+                const drift = (Math.random() - 0.5) * 200;
+
+                confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.6 },
+                    { transform: `translateY(100vh) translateX(${drift}px) rotate(720deg)`, opacity: 0 }
+                ], {
+                    duration: duration,
+                    easing: 'cubic-bezier(0, 0, 0.2, 1)',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => confetti.remove(), duration);
+            }
+        });
+    </script>
+</body></html>

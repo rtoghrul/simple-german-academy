@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simple German Academy - Level A2 Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#213145",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container": "#e5eeff",
+                        "primary": "#0058be",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#005ac2",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#4edea3",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#424754",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-container": "#2170e4",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "tertiary": "#825100",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#a36700",
+                        "surface-dim": "#cbdbf5",
+                        "secondary": "#006c49",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-background": "#0b1c30",
+                        "on-primary-container": "#fefcff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#00714d",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#d3e4fe",
+                        "outline-variant": "#c2c6d6",
+                        "surface": "#f8f9ff",
+                        "outline": "#727785",
+                        "on-secondary-fixed": "#002113",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "container-margin-mobile": "20px",
+                        "container-margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .roadmap-line {
+            background-image: radial-gradient(circle, #c2c6d6 2px, transparent 2px);
+            background-size: 1px 12px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top App Bar (Mobile & Desktop) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-20 md:px-40 h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary">Simple German Academy</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full">local_fire_department</button>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full">language</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional and clean studio headshot of a friendly person with a warm smile. The lighting is soft and even, typical of high-end corporate photography. The background is a neutral, out-of-focus office environment that emphasizes a modern and professional aesthetic. The image conveys trust and approachability, aligning with a premium educational platform's user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhLT3yRb3e604rBl19kL8yWItY5qKBX0nqSQuL4BQ7aw_5Ewb86P3ZKJzdG7KcqdOxIHcKFsmALhg4uJCVjWCWekPjxhQXL362dBhp3K9T4SP12Lc62AIeGLsP3SBioydbuskaVB-SGT8Zo6bpxyCupDhgMhIwNwvwjAes0Z99deXH2EpPRNXQPXwXIoQh3VgpUCqXn4VmCX_fKJwkdFStMztesRPxSkoXkcQFJgNMgD4v1Dp2OPxKSyHqCQB4cX36jQnZRA0XJ-nA"/>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- Side Navigation (Desktop) -->
+<nav class="hidden md:flex flex-col h-[calc(100vh-64px)] w-[280px] bg-surface-container-low shadow-sm border-r border-outline-variant sticky top-16 overflow-y-auto">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-6">
+<img class="w-12 h-12 rounded-full" data-alt="Close-up portrait of a cheerful adult with clear features and a welcoming expression, set against a blurred indoor workspace background with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbs4nwNw7oLv4G49OaNWqNff2rx-e5WKHnlNUPWYcTmhDM0WaTPdVIrnKY5gr_eInqxlWsUz3QafnNJxzj_qRtVa7fcDjAZnxVV_tGepZ-XEyCo6J8nZhH1_kNfkRX3IeaVAIPP9CV_sBW3ksk-ZtNf6Q__tJS9H6LXxj9WHilchAew4QWG4OnQutU-otb15qemXBj2qjmYFfoXxxu4KdQFZOzp6-HPxpq4Yk2aq8qEoefrhm6iRKrEx_ALSADyUzYlwZXwEH2wtgW"/>
+<div>
+<p class="text-label-md font-label-md text-primary">Wilkommen</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Level A2 - Intermediate</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-l-4 border-primary bg-surface-container-high translate-x-1 transition-transform rounded-r-lg" href="#">
+<span class="material-symbols-outlined fill-icon" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="grammar.html">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg group" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-md">AI Tutor</span>
+</a>
+</div>
+<div class="mt-section-gap p-4 rounded-xl bg-primary text-on-primary shadow-lg">
+<p class="font-label-md mb-2">Upgrade to Pro</p>
+<p class="text-label-sm opacity-90 mb-4">Unlock all A2 resources and expert feedback.</p>
+<button class="w-full py-2 bg-on-primary text-primary rounded-lg font-label-md hover:bg-primary-fixed transition-colors">Go Pro</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[1100px] mx-auto px-5 md:px-10 pb-32">
+<!-- Hero Section -->
+<section class="mt-base md:mt-gutter py-8 md:py-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px] fill-icon" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span>ELEMENTARY</span>
+</div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-4">Level A2 - Elementary</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Continue your journey. Learn to communicate in simple, routine tasks and describe your background and immediate environment.</p>
+</div>
+<div class="w-full md:w-64 bg-surface-container-high rounded-2xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-3">
+<span class="text-label-md text-primary font-bold">Progress</span>
+<span class="text-label-md text-primary">15%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[15%] transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid - Milestones & Goals -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-section-gap">
+<div class="md:col-span-7 bg-tertiary-container text-on-tertiary-container p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[160px]">
+<div class="z-10">
+<span class="material-symbols-outlined text-4xl mb-2 opacity-80">military_tech</span>
+<p class="text-headline-md font-headline-md">Master the Perfekt tense</p>
+<p class="text-body-md mt-1 opacity-90">Next Milestone: unlock the "Time Traveler" badge.</p>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]">schedule</span>
+</div>
+</div>
+<div class="md:col-span-5 bg-surface-container-highest p-6 rounded-3xl flex flex-col justify-between border border-outline-variant shadow-sm">
+<div>
+<div class="flex justify-between items-center mb-4">
+<p class="text-label-md font-bold text-on-surface">Weekly Goal</p>
+<span class="text-label-sm bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md">1/5 Lessons</span>
+</div>
+<div class="flex gap-2 mb-4">
+<div class="h-2 flex-1 rounded-full bg-secondary"></div>
+<div class="h-2 flex-1 rounded-full bg-outline-variant opacity-40"></div>
+<div class="h-2 flex-1 rounded-full bg-outline-variant opacity-40"></div>
+<div class="h-2 flex-1 rounded-full bg-outline-variant opacity-40"></div>
+<div class="h-2 flex-1 rounded-full bg-outline-variant opacity-40"></div>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant">Keep the streak! Complete 4 more lessons this week.</p>
+</div>
+</section>
+<!-- Learning Roadmap (Asymmetric Layout) -->
+<div class="relative space-y-gutter">
+<!-- Center vertical line for roadmap -->
+<div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px roadmap-line -translate-x-1/2 z-0"></div>
+<!-- Module 1: Active -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-center gap-gutter md:odd:flex-row-reverse">
+<div class="flex-1">
+<div class="bg-surface-container-lowest border-2 border-primary p-6 rounded-3xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-headline-md font-headline-md text-primary">Module 1: Daily Life</h3>
+<p class="text-label-sm text-secondary font-bold">CURRENTLY STUDYING</p>
+</div>
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">wb_sunny</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-label-md text-on-surface">Morning Routine</span>
+</div>
+<span class="text-label-sm text-on-surface-variant">12 min</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-primary-container text-on-primary-container rounded-xl cursor-pointer shadow-md scale-[1.02]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-label-md">At Work</span>
+</div>
+<span class="text-label-sm opacity-80">15 min</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center border-4 border-background shadow-md hidden md:flex">
+<span class="material-symbols-outlined text-white text-xl">school</span>
+</div>
+<div class="flex-1 hidden md:block"></div>
+</div>
+<!-- Module 2: Locked -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-center gap-gutter">
+<div class="flex-1">
+<div class="bg-surface border border-outline-variant p-6 rounded-3xl opacity-75 grayscale-[0.5] hover:grayscale-0 transition-all duration-300">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface-variant">Module 2: Shopping &amp; Service</h3>
+<p class="text-label-sm text-outline font-bold uppercase">Locked</p>
+</div>
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">At the Market</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">Asking for Prices</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center border-4 border-background hidden md:flex">
+<span class="material-symbols-outlined text-outline text-xl">lock</span>
+</div>
+<div class="flex-1 hidden md:block"></div>
+</div>
+<!-- Module 3: Locked -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-center gap-gutter md:flex-row-reverse">
+<div class="flex-1">
+<div class="bg-surface border border-outline-variant p-6 rounded-3xl opacity-75 grayscale-[0.5] hover:grayscale-0 transition-all duration-300">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface-variant">Module 3: Past Events</h3>
+<p class="text-label-sm text-outline font-bold uppercase">Locked</p>
+</div>
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">history</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">My Last Vacation</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">Childhood Memories</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center border-4 border-background hidden md:flex">
+<span class="material-symbols-outlined text-outline text-xl">lock</span>
+</div>
+<div class="flex-1 hidden md:block"></div>
+</div>
+<!-- Module 4: Locked -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-center gap-gutter">
+<div class="flex-1">
+<div class="bg-surface border border-outline-variant p-6 rounded-3xl opacity-75 grayscale-[0.5] hover:grayscale-0 transition-all duration-300">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface-variant">Module 4: Health &amp; Body</h3>
+<p class="text-label-sm text-outline font-bold uppercase">Locked</p>
+</div>
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">medication</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">At the Doctor</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-outline">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md">Staying Fit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center border-4 border-background hidden md:flex">
+<span class="material-symbols-outlined text-outline text-xl">lock</span>
+</div>
+<div class="flex-1 hidden md:block"></div>
+</div>
+</div>
+<!-- Footer Section inside Main -->
+<footer class="mt-section-gap pt-12 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<p class="text-label-md font-bold text-on-surface mb-2">Simple German Academy</p>
+<p class="text-body-md text-on-surface-variant">© 2024 Simple German Academy</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant shadow-lg flex justify-around items-center py-2 px-4 pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-all" href="#">
+<span class="material-symbols-outlined fill-icon" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="text-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-sm">AI</span>
+</a>
+</nav>
+<!-- Contextual Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group z-40">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-label-sm py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Continue Module 1</span>
+</button>
+<script>
+        // Simple micro-interaction for roadmap nodes
+        document.querySelectorAll('.roadmap-line').forEach(line => {
+            line.style.transition = 'height 2s ease-out';
+        });
+
+        // Add some "breathing" effect to active lesson card
+        const activeLesson = document.querySelector('.bg-primary-container');
+        if (activeLesson) {
+            setInterval(() => {
+                activeLesson.classList.toggle('shadow-xl');
+            }, 2000);
+        }
+    </script>
+</body></html>

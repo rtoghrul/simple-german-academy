@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface": "#f8f9ff",
+                        "outline": "#727785",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#825100",
+                        "on-primary-fixed-variant": "#004395",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-error-container": "#93000a",
+                        "secondary": "#006c49",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#a36700",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#fefcff",
+                        "inverse-primary": "#adc6ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary": "#0058be",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#2170e4",
+                        "surface-container-highest": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c6d6",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed": "#001a42",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424754",
+                        "surface-tint": "#005ac2",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed": "#d8e2ff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "container-margin-mobile": "20px",
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Simple German Academy</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex bg-surface-container-low px-4 py-1.5 rounded-full items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-48" placeholder="Suche..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-twHmPl-QSneEBLK3Ni-Xe3Yyjs_165X-sYNy7N3T4TZ7mrvPD2tEK4nk5Hx2BcBeAIreOG18Lhr-daDRACZwtU8IcrUazR9ddDlXhsPeX3fS9vko7y97kEkpwP92eSnYYdrOYkCduffcBzauu5MJtBpYaaYzbFEfNPYa6NKcCxwZSz4PGsH4PWg1er8LaNXh9w2k_mJlEYNiM-bUctxgsCanGksTwCKAC4jxjDDroLyiEuQQsVqcupdrrccXNKPS5XiFTZ2KhuLc"/>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-[280px] fixed left-0 top-16 bg-surface-container-low dark:bg-surface-container shadow-sm border-r border-outline-variant">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-1">
+<span class="font-headline-md text-headline-md font-bold text-primary">Wilkommen</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Level A2 - Intermediate</span>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-label-md text-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label-md text-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim font-bold border-l-4 border-primary dark:border-primary-fixed-dim bg-surface-container-high translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-md text-label-md">AI Tutor</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:opacity-90 transition-all shadow-md" style="background-color: #3b82f6; box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);">
+                    Upgrade to Pro
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:ml-[280px] px-container-margin-mobile md:px-container-margin-desktop py-8 max-w-[1400px]">
+<!-- Personalized Greeting Section -->
+<section class="mb-section-gap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Willkommen zurück, Lukas! 👋</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Du hast heute bereits 15 Minuten gelernt. Mach weiter so!</p>
+</section>
+<!-- Bento Grid Stats & Next Step -->
+<div class="bento-grid mb-section-gap">
+<!-- Recommended Next Step (Large Card) -->
+<div class="col-span-12 lg:col-span-8 bg-primary-container text-on-primary-container rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[320px] p-10" style="background-image: radial-gradient(at 0% 0%, #2170e4 0, transparent 50%), radial-gradient(at 50% 0%, #3b82f6 0, transparent 50%), radial-gradient(at 100% 0%, #2170e4 0, transparent 50%);">
+<div class="relative z-10">
+<span class="px-3 py-1 bg-on-primary-container/20 rounded-full font-label-sm text-label-sm uppercase tracking-wider mb-4 inline-block">Nächster Schritt</span>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg mb-4 max-w-md">Modalverben im Präsens</h2>
+<p class="font-body-md text-body-md opacity-90 max-w-sm mb-8">Meistere 'können', 'müssen' und 'wollen', um deine Sätze natürlicher zu gestalten.</p>
+<button class="bg-on-primary text-primary px-8 py-4 rounded-2xl font-label-md text-label-md hover:scale-105 transition-transform flex items-center gap-2">
+                            Lektion starten
+                            <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A brightly lit, modern study space with a clean wooden desk, an open notebook with neatly written German verbs, and a warm cup of coffee. The atmosphere is calm and focused, with soft natural light streaming through a window, using a palette of soft blues and whites to match a professional learning app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD_ldjEOa-hjIkMYX-kJC4GNmb7Mvk9cDUkT5Rnwp-n78SY3aRnKP55za60w22_lVsjjX7kuu0qFWhjbPIKOKGBxBqXP4eyrygWxnb-m2WpeKJJZZXlSJJJWVOnkv-UFAnxXgkeMfW7IGyPzUY7LT2ZKEHhXwuKtgVJSC1WonAcS72LMFxIJD1IJ1Z24CGa5Kt99RUzJEZjRuWfHSheTIQ5W_hFAJfdjSVRE4rDhitbS6Uu8N82l9xjUdQgRzYwBHd5c0xHWSxFdHX"/>
+</div>
+</div>
+<!-- Streak & XP Cards (Stacked) -->
+<div class="col-span-12 lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-6">
+<div class="bg-surface-container-highest p-6 rounded-3xl shadow-sm border border-outline-variant/30 flex flex-col items-center justify-center text-center border-t-4 border-t-tertiary">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-display-lg font-display-lg text-on-surface">5</span>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Tage Streak</span>
+</div>
+<div class="bg-surface-container-highest p-6 rounded-3xl shadow-sm border border-outline-variant/30 flex flex-col items-center justify-center text-center border-t-4 border-t-secondary">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-display-lg font-display-lg text-on-surface">2,450</span>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Gesamt XP</span>
+</div>
+</div>
+<!-- Stats: Level & Words -->
+<div class="col-span-12 md:col-span-6 bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Aktuelles Level</h3>
+<p class="text-body-md text-on-surface-variant">A1 - Anfänger</p>
+</div>
+<div class="w-16 h-16 bg-primary-fixed-dim rounded-2xl flex items-center justify-center text-primary font-bold text-2xl">A1</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-label-md font-label-md">
+<span>Fortschritt zu A2</span>
+<span>68%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[68%] h-full bg-secondary transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Gelernte Wörter</h3>
+<p class="text-body-md text-on-surface-variant">Vokabelschatz</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="menu_book">menu_book</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">120</span>
+<span class="text-body-md text-on-surface-variant">/ 500 Ziel</span>
+</div>
+<p class="text-label-md text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12 diese Woche
+                    </p>
+</div>
+<!-- Charts: Weekly Activity -->
+<div class="col-span-12 lg:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/30 bg-[radial-gradient(#e5eeff_1px,transparent_1px)] [background-size:20px_20px]">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-8">Lernzeit (Woche)</h3>
+<div class="flex items-end justify-between h-48 gap-2">
+<!-- Simulated Bar Chart -->
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[40%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">20m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Mo</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[65%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">35m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Di</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-primary rounded-t-lg h-[90%] hover:opacity-80 transition-all cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">50m</div>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold">Mi</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[30%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">15m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Do</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[55%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">28m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Fr</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[15%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">8m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Sa</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-2">
+<div class="w-full bg-surface-container rounded-t-lg h-[45%] hover:bg-primary-fixed-dim transition-colors cursor-pointer relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">22m</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">So</span>
+</div>
+</div>
+</div>
+<!-- Weak Areas Section -->
+<div class="col-span-12 lg:col-span-5 bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Schwachstellen</h3>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-error-container/30 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-error-container/50 transition-colors hover:bg-error-container/40">
+<div>
+<h4 class="text-label-md font-label-md text-on-error-container">Der / Die / Das Artikel</h4>
+<p class="text-label-sm text-on-surface-variant">4 Fehler in der letzten Lektion</p>
+</div>
+<span class="material-symbols-outlined text-error opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-4 bg-error-container/30 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-error-container/50 transition-colors hover:bg-error-container/40">
+<div>
+<h4 class="text-label-md font-label-md text-on-error-container">Trennbare Verben</h4>
+<p class="text-label-sm text-on-surface-variant">Wiederholung empfohlen</p>
+</div>
+<span class="material-symbols-outlined text-error opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-4 bg-error-container/30 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-error-container/50 transition-colors hover:bg-error-container/40">
+<div>
+<h4 class="text-label-md font-label-md text-on-error-container">Vokabeln: Kleidung</h4>
+<p class="text-label-sm text-on-surface-variant">Vergessenskurve erreicht</p>
+</div>
+<span class="material-symbols-outlined text-error opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-surface-container transition-colors">
+                        Fehler wiederholen
+                    </button>
+</div>
+<!-- Achievements / Badges Section -->
+<div class="col-span-12 bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-headline-md font-headline-md text-on-surface">Erfolge</h3>
+<button class="text-primary text-label-md font-label-md hover:underline">Alle ansehen</button>
+</div>
+<div class="flex flex-wrap gap-8 justify-between">
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-tertiary-fixed rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="text-center">
+<h4 class="text-label-md font-label-md">Erste 10 Wörter</h4>
+<p class="text-label-sm text-on-surface-variant">Abgeschlossen</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-secondary-fixed rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-secondary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<div class="text-center">
+<h4 class="text-label-md font-label-md">7-Tage Streak</h4>
+<p class="text-label-sm text-on-surface-variant">Noch 2 Tage</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 opacity-40">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center grayscale">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">psychology</span>
+</div>
+<div class="text-center">
+<h4 class="text-label-md font-label-md">Grammatik Profi</h4>
+<p class="text-label-sm text-on-surface-variant">Gesperrt</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<div class="text-center">
+<h4 class="text-label-md font-label-md">Erstes Gespräch</h4>
+<p class="text-label-sm text-on-surface-variant">Abgeschlossen</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 opacity-40">
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center grayscale">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">rocket_launch</span>
+</div>
+<div class="text-center">
+<h4 class="text-label-md font-label-md">A2 Absolvent</h4>
+<p class="text-label-sm text-on-surface-variant">Gesperrt</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface dark:bg-surface-container border-t border-outline-variant shadow-lg rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-label-sm font-label-sm">Levels</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm">Learn</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-sm font-label-sm">Practice</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 scale-90">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-label-sm font-label-sm">AI</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="md:ml-[280px] w-full py-8 px-container-margin-mobile md:px-container-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright dark:bg-surface-dim border-t border-outline-variant">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<span class="text-label-md font-bold text-on-surface">Simple German Academy</span>
+<p class="text-label-sm text-on-surface-variant">© 2024 Simple German Academy</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm font-label-sm" href="#">Contact Support</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm font-label-sm" href="#">Methodology</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.bento-grid > div').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+                card.style.transition = 'transform 0.1s ease';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

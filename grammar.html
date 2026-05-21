@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grammar Library | Simple German Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#213145",
+                    "on-primary-container": "#fefcff",
+                    "on-primary-fixed": "#001a42",
+                    "outline-variant": "#c2c6d6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#a36700",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-container": "#fffbff",
+                    "outline": "#727785",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed": "#002113",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "tertiary": "#825100",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-surface-variant": "#424754",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed": "#ffddb8",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#2170e4",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-tint": "#005ac2",
+                    "surface-container": "#e5eeff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#adc6ff",
+                    "secondary": "#006c49",
+                    "on-primary-fixed-variant": "#004395",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#6cf8bb",
+                    "primary": "#0058be",
+                    "on-tertiary-fixed": "#2a1700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin-mobile": "20px",
+                    "section-gap": "48px",
+                    "gutter": "16px",
+                    "container-margin-desktop": "40px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-pill {
+            box-shadow: inset 4px 0 0 0 #0058be;
+        }
+        /* Custom scrollbar for clean aesthetic */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c2c6d6; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Simple German Academy</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-1.5 gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md w-48" placeholder="Search grammar..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container p-2 rounded-full transition-colors">local_fire_department</button>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container p-2 rounded-full transition-colors">language</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a friendly young man with a warm smile, set against a clean, soft-focus office background. The lighting is bright and high-key, aligning with a modern light-mode UI aesthetic. He is wearing a neutral-colored casual business shirt, and the overall mood is approachable, academic, and encouraging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGKjbB0TdD3zVNgj2H_VvDZSYTQNh3zpuxel7VDtby9Jeffv9211p9-eYyrGnhm4H1vIBCkDP8BZIYNAdWDITVORoecZQTu4CBUtIracFkkO9oStN2o6EbCCU4KJwGYJYOyZ6ByzKaCG3U8BgVDOvC-dHfQXnKQNnQYySUU4YyJaRYnEJatsRvJl2PFu3ey9QXlTspHFi0tOGFNjjl0vfi3JTHdO6jr4OyuZl0mbu6sIBJnXy3cPLa1NMmApuJW79UtJJO5jZOT4h"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen w-[280px] flex-col pt-20 pb-8 bg-surface-container-low dark:bg-surface-container shadow-sm border-r border-outline-variant">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<img alt="User avatar" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoD2bWGUBIbY7XXTkbFV-kC_Gaqh2tItMJw1363XROi55HGTXWSP5FtVfoc6jrbnts7QQo7iar1eGyHWVEnOY5lKH9143EjYyakONGm_ARpABKjbLMhxkGDyrYpd_NiHTBbzR0sgrR2OnstciA4dcn12TmYy5zoRy32H6Pi3LPsSuPwK1Xud2iyQut1knH0uZ_tTedaOGEIrfu3x9KuwqjpuLNcrPadoxT2lhPFM8SSey4vPaUEZI3i0Fcyaj1JWXu8hsvUZq9PWvy"/>
+<div>
+<p class="text-label-md font-bold text-primary">Wilkommen</p>
+<p class="text-label-sm text-on-surface-variant">Level A2 - Intermediate</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">home</span>
+<span class="text-label-md font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">layers</span>
+<span class="text-label-md font-label-md">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">menu_book</span>
+<span class="text-label-md font-label-md">Vocabulary</span>
+</a>
+<!-- Active State: Grammar -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-l-4 border-primary bg-surface-container-high translate-x-1 transition-transform" href="grammar.html">
+<span class="material-symbols-outlined">gavel</span>
+<span class="text-label-md font-label-md">Grammar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">psychology</span>
+<span class="text-label-md font-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">smart_toy</span>
+<span class="text-label-md font-label-md">AI Tutor</span>
+</a>
+</div>
+<div class="mt-auto px-6">
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md hover:opacity-90 transition-opacity">Upgrade to Pro</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-20 md:pb-12 px-container-margin-mobile md:ml-[280px] md:px-container-margin-desktop min-h-screen">
+<div class="max-w-[1100px] mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap relative overflow-hidden rounded-[32px] bg-primary-container p-8 md:p-12 text-on-primary-container">
+<div class="relative z-10 md:w-2/3">
+<h1 class="text-display-lg font-display-lg mb-4">German Grammar Made Simple</h1>
+<p class="text-body-lg font-body-lg opacity-90 mb-8">Master the rules of the German language through clear, visual explanations and simple step-by-step guides designed for real learners.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface text-primary px-6 py-3 rounded-full font-label-md hover:bg-surface-dim transition-colors shadow-sm">Start Learning</button>
+<button class="border border-on-primary-container px-6 py-3 rounded-full font-label-md hover:bg-on-primary-container/10 transition-colors">Browse Index</button>
+</div>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute right-0 bottom-0 top-0 w-1/3 hidden md:flex items-center justify-center opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]">gavel</span>
+</div>
+</section>
+<!-- Search & Filter Bar -->
+<section class="mb-8 flex flex-col md:flex-row gap-4 items-center">
+<div class="relative flex-grow w-full">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-2xl focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md shadow-sm" placeholder="Search topics (e.g. 'Dative', 'Passive Voice'...)" type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<select class="flex-grow md:flex-grow-0 bg-surface-container-lowest border border-outline-variant rounded-2xl px-4 py-4 text-label-md font-label-md outline-none cursor-pointer hover:bg-surface-container-low transition-colors">
+<option>All Levels</option>
+<option>A1 - Beginner</option>
+<option>A2 - Elementary</option>
+<option>B1 - Intermediate</option>
+<option>B2 - Upper Intermediate</option>
+</select>
+<button class="bg-surface-container-high text-primary p-4 rounded-2xl hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</section>
+<!-- Grammar Categories Grid -->
+<section class="mb-section-gap">
+<h2 class="text-headline-lg font-headline-lg mb-6 flex items-center gap-2">
+<span class="w-2 h-8 bg-primary rounded-full"></span>
+                    Grammar Categories
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Category 1 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant hover:shadow-lg transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-primary-container/20 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">abc</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">The Basics</h3>
+<p class="text-label-sm text-on-surface-variant mb-4">Alphabet, Articles, Nouns &amp; Gender rules.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-sm">8 Lessons</span>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant hover:shadow-lg transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">timeline</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Verbs &amp; Tenses</h3>
+<p class="text-label-sm text-on-surface-variant mb-4">Present, Past, Perfect, &amp; Modal Verbs.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-sm">14 Lessons</span>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant hover:shadow-lg transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-tertiary-container/20 text-tertiary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">The Four Cases</h3>
+<p class="text-label-sm text-on-surface-variant mb-4">Nominative, Accusative, Dative, Genitive.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-sm">6 Lessons</span>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant hover:shadow-lg transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-primary-container/20 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">subject</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Structure</h3>
+<p class="text-label-sm text-on-surface-variant mb-4">Word Order, Passive, Clauses.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-sm">10 Lessons</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-section-gap">
+<!-- Detailed Topic List/Index (Left) -->
+<div class="lg:col-span-2 space-y-4">
+<h2 class="text-headline-lg font-headline-lg mb-6">Recent Topics</h2>
+<!-- Topic Card 1 -->
+<div class="p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant flex gap-4 hover:border-primary transition-colors cursor-pointer shadow-sm group">
+<div class="hidden sm:flex shrink-0 w-16 h-16 rounded-2xl bg-surface-variant items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-headline-md font-headline-md group-hover:text-primary transition-colors">Definite &amp; Indefinite Articles</h4>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-label-sm font-bold uppercase">A1</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-3">Understanding der, die, das and how they change with nouns.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">schedule</span> 15 mins</span>
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">bar_chart</span> 2,4k learners</span>
+</div>
+</div>
+</div>
+<!-- Topic Card 2 -->
+<div class="p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant flex gap-4 hover:border-primary transition-colors cursor-pointer shadow-sm group">
+<div class="hidden sm:flex shrink-0 w-16 h-16 rounded-2xl bg-surface-variant items-center justify-center">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-headline-md font-headline-md group-hover:text-primary transition-colors">The Perfect Tense (Perfekt)</h4>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-label-sm font-bold uppercase">A2</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-3">Learn how to talk about the past using 'haben' and 'sein'.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">schedule</span> 25 mins</span>
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">bar_chart</span> 1,8k learners</span>
+</div>
+</div>
+</div>
+<!-- Topic Card 3 -->
+<div class="p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant flex gap-4 hover:border-primary transition-colors cursor-pointer shadow-sm group">
+<div class="hidden sm:flex shrink-0 w-16 h-16 rounded-2xl bg-surface-variant items-center justify-center">
+<span class="material-symbols-outlined text-primary">shuffle</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-headline-md font-headline-md group-hover:text-primary transition-colors">Inverted Word Order</h4>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-label-sm font-bold uppercase">B1</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-3">Mastering German sentence structure when starting with time or place.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">schedule</span> 20 mins</span>
+<span class="flex items-center gap-1 text-label-sm text-outline"><span class="material-symbols-outlined text-[16px]">bar_chart</span> 900 learners</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content (Right) -->
+<div class="space-y-8">
+<!-- Featured Topic Card -->
+<div class="relative overflow-hidden rounded-[32px] bg-secondary-container p-6 text-on-secondary-container shadow-sm border border-secondary-container/50">
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 bg-on-secondary-container text-on-secondary rounded-full text-label-sm mb-4">Topic of the Week</span>
+<h3 class="text-headline-md font-headline-md mb-2">The Dative Case</h3>
+<p class="text-body-md mb-6 opacity-90">When to use 'dem' vs 'der'? Master one of the most tricky cases in German grammar.</p>
+<button class="w-full bg-on-secondary-container text-on-secondary py-3 rounded-xl font-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                                Learn Now <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Blurred decorative circles -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-on-secondary-container opacity-10 rounded-full"></div>
+</div>
+<!-- Quick Quiz Widget -->
+<div class="p-6 bg-surface-container-high rounded-[32px] border border-outline-variant">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">quiz</span>
+<h3 class="text-label-md font-bold uppercase tracking-wider">Quick Quiz</h3>
+</div>
+<p class="text-body-md font-headline-md mb-4">"Ich gehe in ____ Park." (Dative)</p>
+<div class="space-y-2">
+<button class="w-full text-left p-3 rounded-xl bg-surface hover:bg-primary hover:text-on-primary transition-all text-label-md border border-outline-variant">den</button>
+<button class="w-full text-left p-3 rounded-xl bg-surface hover:bg-primary hover:text-on-primary transition-all text-label-md border border-outline-variant">dem</button>
+<button class="w-full text-left p-3 rounded-xl bg-surface hover:bg-primary hover:text-on-primary transition-all text-label-md border border-outline-variant">das</button>
+</div>
+</div>
+<!-- Common Mistakes Sidebar -->
+<div class="p-6 bg-surface-bright rounded-[32px] border border-outline-variant">
+<h3 class="text-label-md font-bold text-on-surface-variant uppercase tracking-wider mb-4">Common Mistakes</h3>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-error shrink-0">cancel</span>
+<div>
+<p class="text-label-md font-bold">Confusing 'als' vs 'wenn'</p>
+<p class="text-label-sm text-outline">Both mean 'when' but are used in different contexts.</p>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-error shrink-0">cancel</span>
+<div>
+<p class="text-label-md font-bold">Verb Position</p>
+<p class="text-label-sm text-outline">Remember: Verbs always sit in the second position!</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="a1.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm">Levels</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90" href="vocabulary.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="speaking.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="ai-tutor.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-label-sm">AI</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-8 px-container-margin-mobile md:px-container-margin-desktop md:ml-[280px] flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-bright dark:bg-surface-dim border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="text-label-md font-bold text-on-surface">Simple German Academy</span>
+<span class="text-label-sm text-on-surface-variant opacity-70">© 2024 Simple German Academy</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a>
+<a class="text-label-sm text-on-surface-variant hover:text-primary transition-all" href="#">Methodology</a>
+</div>
+</footer>
+<script>
+        // Simple Micro-interaction for the Quiz
+        const quizButtons = document.querySelectorAll('.QuickQuiz button');
+        // This is a placeholder for real logic. Adding a simple effect.
+        document.querySelectorAll('.QuickQuiz button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Gut gemacht! Let\'s keep learning.');
+            });
+        });
+    </script>
+</body></html>
