@@ -275,31 +275,12 @@
 <span class="absolute right-full mr-4 bg-on-background text-surface text-label-md px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Fast Review</span>
 </button>
 <script>
-        // Micro-interactions and subtle effects
+        // Simple micro-interactions and subtle effects
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('click', () => {
                 el.classList.add('scale-95');
                 setTimeout(() => el.classList.remove('scale-95'), 100);
             });
-        });
-
-        // Simple scroll reveal for roadmap items
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.relative.z-10').forEach(el => {
-            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(el);
         });
     </script>
 </body></html>
