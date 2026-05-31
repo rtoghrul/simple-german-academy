@@ -103,18 +103,27 @@
 </div>
 <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-4">Level B1 – Intermediate</h1>
 <p class="text-body-lg font-body-lg text-on-surface-variant mb-8">Achieve independence in German. Learn to express opinions, describe dreams, and handle most situations while traveling.</p>
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/30 max-w-md">
+<div class="flex flex-col md:flex-row gap-4 items-stretch mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex-1 max-w-md">
 <div class="flex justify-between items-center mb-2">
 <span class="text-label-md font-bold text-on-surface">Overall Progress</span>
-<span class="text-label-md font-bold text-primary">0%</span>
+<span class="text-label-md font-bold text-primary">25%</span>
 </div>
 <div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
-<div class="bg-secondary h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+<div class="bg-secondary h-full rounded-full transition-all duration-1000" style="width: 25%"></div>
 </div>
-<div class="mt-4 flex items-center gap-2 text-label-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
-                            Complete A2 to unlock full B1 access
+<div class="mt-4 flex items-center gap-2 text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+                            B1 Roadmap Unlocked!
                         </div>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-6 rounded-2xl flex-1 flex flex-col justify-between max-w-md">
+<div>
+<h4 class="text-label-md font-bold text-primary">B1 Exam Practice Tool</h4>
+<p class="text-label-sm text-on-surface-variant mt-1">Test your reading, writing, and grammar skills with mock exams.</p>
+</div>
+<button onclick="window.location='b1-exam.html'" class="mt-4 w-full bg-primary text-on-primary py-2.5 rounded-xl font-label-md text-label-md font-bold hover:bg-primary-container transition-all active:scale-95 shadow-sm">Start B1 Exam Simulator</button>
+</div>
 </div>
 </div>
 <!-- Background Decorative Element -->
@@ -149,94 +158,130 @@
 <!-- Vertical Dotted Line -->
 <div class="absolute left-[39px] md:left-[55px] top-0 bottom-0 w-[2px] roadmap-line"></div>
 <!-- Module 1 -->
-<div class="relative mb-16 opacity-75">
+<div class="relative mb-16">
 <!-- Progress Node -->
-<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-surface-container-high border-4 border-background flex items-center justify-center z-10 shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="flight">flight</span>
+<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-primary-container border-4 border-background flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="flight">flight</span>
 </div>
 <div class="glass-card rounded-3xl p-8 max-w-3xl hover:shadow-lg transition-all border-outline-variant relative">
-<div class="absolute top-4 right-6 flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-label-sm text-outline">
-<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
-                            Locked
+<div class="absolute top-4 right-6 flex items-center gap-1.5 px-3 py-1 bg-success/10 rounded-full text-label-sm text-success font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            Active
                         </div>
 <div class="mb-4">
 <h3 class="text-headline-md font-bold text-on-surface mb-2">Module 1: Travel &amp; Transport</h3>
 <p class="text-on-surface-variant">Master the art of logistics in a foreign language. From navigating train stations to describing lost luggage.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div onclick="openQuiz('booking')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
-<span class="text-label-md font-bold">Booking a Trip</span>
+<span class="text-label-md font-bold text-on-surface">Booking a Trip</span>
 </div>
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
+</div>
+<div onclick="openQuiz('airport')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="connecting_airports">connecting_airports</span>
-<span class="text-label-md font-bold">At the Airport</span>
+<span class="text-label-md font-bold text-on-surface">At the Airport</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
 </div>
 </div>
 </div>
 </div>
 <!-- Module 2 -->
-<div class="relative mb-16 opacity-60">
-<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-surface-container-high border-4 border-background flex items-center justify-center z-10 shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="work">work</span>
+<div class="relative mb-16">
+<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-primary-container border-4 border-background flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="work">work</span>
 </div>
-<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant">
+<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant hover:shadow-lg transition-all relative">
+<div class="absolute top-4 right-6 flex items-center gap-1.5 px-3 py-1 bg-success/10 rounded-full text-label-sm text-success font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            Active
+                        </div>
 <div class="mb-4">
 <h3 class="text-headline-md font-bold text-on-surface mb-2">Module 2: Work &amp; Education</h3>
 <p class="text-on-surface-variant">Prepare for the professional world. Learn formal communication and how to present your professional skills.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div onclick="openQuiz('interviews')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
-<span class="text-label-md font-bold">Job Interviews</span>
+<span class="text-label-md font-bold text-on-surface">Job Interviews</span>
 </div>
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
+</div>
+<div onclick="openQuiz('cv')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="description">description</span>
-<span class="text-label-md font-bold">CV Writing</span>
+<span class="text-label-md font-bold text-on-surface">CV Writing</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
 </div>
 </div>
 </div>
 </div>
 <!-- Module 3 -->
-<div class="relative mb-16 opacity-50">
-<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-surface-container-high border-4 border-background flex items-center justify-center z-10 shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="devices">devices</span>
+<div class="relative mb-16">
+<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-primary-container border-4 border-background flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="devices">devices</span>
 </div>
-<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant">
+<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant hover:shadow-lg transition-all relative">
+<div class="absolute top-4 right-6 flex items-center gap-1.5 px-3 py-1 bg-success/10 rounded-full text-label-sm text-success font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            Active
+                        </div>
 <div class="mb-4">
 <h3 class="text-headline-md font-bold text-on-surface mb-2">Module 3: Media &amp; Technology</h3>
 <p class="text-on-surface-variant">Stay connected. Discuss the impact of digital media on society and talk about your favorite gadgets.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div onclick="openQuiz('social')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="share">share</span>
-<span class="text-label-md font-bold">Social Media</span>
+<span class="text-label-md font-bold text-on-surface">Social Media</span>
 </div>
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
+</div>
+<div onclick="openQuiz('trends')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
-<span class="text-label-md font-bold">Digital Trends</span>
+<span class="text-label-md font-bold text-on-surface">Digital Trends</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
 </div>
 </div>
 </div>
 </div>
 <!-- Module 4 -->
-<div class="relative mb-8 opacity-40">
-<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-surface-container-high border-4 border-background flex items-center justify-center z-10 shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="eco">eco</span>
+<div class="relative mb-8">
+<div class="absolute left-[-24px] md:left-[-40px] top-4 w-12 h-12 rounded-full bg-primary-container border-4 border-background flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
 </div>
-<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant">
+<div class="glass-card rounded-3xl p-8 max-w-3xl border-outline-variant hover:shadow-lg transition-all relative">
+<div class="absolute top-4 right-6 flex items-center gap-1.5 px-3 py-1 bg-success/10 rounded-full text-label-sm text-success font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            Active
+                        </div>
 <div class="mb-4">
 <h3 class="text-headline-md font-bold text-on-surface mb-2">Module 4: Environment &amp; Sustainability</h3>
 <p class="text-on-surface-variant">Express complex opinions on global issues like the environment and conscious consumption.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div onclick="openQuiz('climate')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="thermostat">thermostat</span>
-<span class="text-label-md font-bold">Climate Change</span>
+<span class="text-label-md font-bold text-on-surface">Climate Change</span>
 </div>
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
+</div>
+<div onclick="openQuiz('green')" class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-icon="nature_people">nature_people</span>
-<span class="text-label-md font-bold">Green Living</span>
+<span class="text-label-md font-bold text-on-surface">Green Living</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">play_circle</span>
 </div>
 </div>
 </div>
@@ -253,6 +298,27 @@
 </div>
 </div>
 </main>
+
+<!-- Interactive Quiz Modal -->
+<div id="quiz-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden backdrop-blur-sm transition-all p-4">
+    <div class="glass-card w-full max-w-lg rounded-3xl p-6 shadow-2xl border border-outline-variant relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeQuiz()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined text-on-surface">close</span>
+        </button>
+        <h3 id="quiz-title" class="text-headline-md font-bold text-primary mb-2">Practice Module</h3>
+        <p id="quiz-desc" class="text-body-md text-on-surface-variant mb-6">Match the German terms with their English translations.</p>
+        
+        <div id="quiz-container" class="space-y-4">
+            <!-- Dynamic matching pairs or questions will be generated here -->
+        </div>
+        
+        <div class="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-outline-variant/30 pt-4">
+            <span id="quiz-feedback" class="text-label-md font-bold text-success"></span>
+            <button id="quiz-submit" onclick="checkAnswers()" class="w-full sm:w-auto px-6 py-2.5 bg-primary text-on-primary rounded-xl font-label-md font-bold hover:bg-primary-container transition-all active:scale-95 shadow-sm">Check Answers</button>
+        </div>
+    </div>
+</div>
+
 <!-- BottomNavBar (Mobile) -->
 <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl">
 <a class="flex flex-col items-center justify-center text-on-surface-variant" href="index.html">
@@ -287,7 +353,7 @@
 </div>
 </footer>
 <script>
-        // Micro-interaction for hover effects on locked modules
+        // Micro-interaction for hover effects on cards
         document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-4px)';
@@ -296,5 +362,168 @@
                 card.style.transform = 'translateY(0px)';
             });
         });
+
+        // Quiz Database
+        const quizzes = {
+            booking: {
+                title: "Booking a Trip (Reise buchen)",
+                desc: "Match the B1 travel vocabulary correctly.",
+                pairs: [
+                    { de: "die Fahrkarte", en: "train ticket" },
+                    { de: "das Gleis", en: "track / platform" },
+                    { de: "die Verspätung", en: "delay" },
+                    { de: "die Verbindung", en: "connection" }
+                ]
+            },
+            airport: {
+                title: "At the Airport (Am Flughafen)",
+                desc: "Match the airport and luggage vocabulary.",
+                pairs: [
+                    { de: "das Gepäck", en: "luggage" },
+                    { de: "die Bordkarte", en: "boarding pass" },
+                    { de: "die Sicherheitskontrolle", en: "security check" },
+                    { de: "der Hinflug", en: "outbound flight" }
+                ]
+            },
+            interviews: {
+                title: "Job Interviews (Vorstellungsgespräch)",
+                desc: "Match B1 professional job search words.",
+                pairs: [
+                    { de: "das Vorstellungsgespräch", en: "job interview" },
+                    { de: "die Bewerbung", en: "application" },
+                    { de: "die Stelle", en: "job position" },
+                    { de: "der Lebenslauf", en: "CV / resume" }
+                ]
+            },
+            cv: {
+                title: "CV Writing (Lebenslauf schreiben)",
+                desc: "Match terms used in professional German CVs.",
+                pairs: [
+                    { de: "die Berufserfahrung", en: "work experience" },
+                    { de: "die Ausbildung", en: "education / training" },
+                    { de: "die Kenntnisse", en: "skills / knowledge" },
+                    { de: "der Bereich", en: "field / area" }
+                ]
+            },
+            social: {
+                title: "Social Media (Soziale Medien)",
+                desc: "Match media and sharing terms.",
+                pairs: [
+                    { de: "teilen", en: "to share" },
+                    { de: "herunterladen", en: "to download" },
+                    { de: "hochladen", en: "to upload" },
+                    { de: "der Beitrag", en: "post / contribution" }
+                ]
+            },
+            trends: {
+                title: "Digital Trends (Digitale Trends)",
+                desc: "Match expressions about the digital future.",
+                pairs: [
+                    { de: "künstliche Intelligenz", en: "artificial intelligence" },
+                    { de: "die Vernetzung", en: "networking / connection" },
+                    { de: "fortgeschritten", en: "advanced" },
+                    { de: "die Entwicklung", en: "development" }
+                ]
+            },
+            climate: {
+                title: "Climate Change (Klimawandel)",
+                desc: "Match terms about environment and climate issues.",
+                pairs: [
+                    { de: "der Klimawandel", en: "climate change" },
+                    { de: "die Erderwärmung", en: "global warming" },
+                    { de: "die Treibhausgase", en: "greenhouse gases" },
+                    { de: "schützen", en: "to protect" }
+                ]
+            },
+            green: {
+                title: "Green Living (Umweltbewusst leben)",
+                desc: "Match vocabulary for sustainability and recycling.",
+                pairs: [
+                    { de: "umweltfreundlich", en: "environmentally friendly" },
+                    { de: "erneuerbar", en: "renewable" },
+                    { de: "die Mülltrennung", en: "waste separation" },
+                    { de: "vermeiden", en: "to avoid / prevent" }
+                ]
+            }
+        };
+
+        let currentQuizKey = '';
+
+        function openQuiz(quizKey) {
+            currentQuizKey = quizKey;
+            const quiz = quizzes[quizKey];
+            document.getElementById('quiz-title').textContent = quiz.title;
+            document.getElementById('quiz-desc').textContent = quiz.desc;
+            document.getElementById('quiz-feedback').textContent = '';
+
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            // Shuffle english answers for dropdown
+            const englishOptions = quiz.pairs.map(p => p.en);
+            // Simple shuffle
+            englishOptions.sort(() => Math.random() - 0.5);
+
+            quiz.pairs.forEach((pair, idx) => {
+                const row = document.createElement('div');
+                row.className = 'flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30';
+                
+                const deSpan = document.createElement('span');
+                deSpan.className = 'text-body-md font-bold text-on-surface';
+                deSpan.textContent = pair.de;
+
+                const select = document.createElement('select');
+                select.id = `quiz-ans-${idx}`;
+                select.className = 'bg-surface border border-outline rounded-lg px-3 py-1.5 text-label-md text-on-surface w-full sm:w-64 focus:ring-primary focus:border-primary';
+                
+                const defaultOpt = document.createElement('option');
+                defaultOpt.value = '';
+                defaultOpt.textContent = '-- Select Meaning --';
+                select.appendChild(defaultOpt);
+
+                englishOptions.forEach(opt => {
+                    const o = document.createElement('option');
+                    o.value = opt;
+                    o.textContent = opt;
+                    select.appendChild(o);
+                });
+
+                row.appendChild(deSpan);
+                row.appendChild(select);
+                container.appendChild(row);
+            });
+
+            document.getElementById('quiz-modal').classList.remove('hidden');
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+        }
+
+        function checkAnswers() {
+            const quiz = quizzes[currentQuizKey];
+            let allCorrect = true;
+
+            quiz.pairs.forEach((pair, idx) => {
+                const select = document.getElementById(`quiz-ans-${idx}`);
+                if (select.value === pair.en) {
+                    select.style.border = '2px solid #006c49';
+                    select.style.backgroundColor = '#ecfdf5';
+                } else {
+                    select.style.border = '2px solid #ba1a1a';
+                    select.style.backgroundColor = '#fef2f2';
+                    allCorrect = false;
+                }
+            });
+
+            const feedback = document.getElementById('quiz-feedback');
+            if (allCorrect) {
+                feedback.className = 'text-label-md font-bold text-success';
+                feedback.textContent = 'Excellent! All answers correct! 🎉';
+            } else {
+                feedback.className = 'text-label-md font-bold text-error';
+                feedback.textContent = 'Some answers are incorrect. Try again!';
+            }
+        }
     </script>
 </body></html>

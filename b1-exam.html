@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Level B1 Modellprüfung | Simple German Academy</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            border-bottom: 3px solid #0058be;
+            color: #0058be;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16 bg-surface border-b border-outline-variant">
+        <div class="flex items-center gap-4 flex-1">
+            <span class="text-headline-md font-headline-md font-bold text-primary cursor-pointer" onclick="window.location='index.html'">Simple German Academy</span>
+            <div class="h-6 w-[1px] bg-outline-variant mx-2 hidden md:block"></div>
+            <span class="text-label-md font-label-md text-on-surface-variant">B1 Modellprüfung (Practice Exam)</span>
+        </div>
+        <div class="flex items-center justify-end gap-3 flex-1">
+            <div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-outline-variant">
+                <span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+                <span id="timer" class="font-mono font-bold text-on-surface">30:00</span>
+            </div>
+            <button onclick="window.location='b1.html'" class="px-4 py-2 border border-outline rounded-xl hover:bg-surface-container transition-colors text-label-md font-bold">Back to B1</button>
+        </div>
+    </header>
+
+    <!-- Tab Bar -->
+    <div class="mt-16 bg-surface border-b border-outline-variant flex justify-center sticky top-16 z-30">
+        <div class="flex gap-8 max-w-[1100px] w-full px-container-margin-mobile md:px-container-margin-desktop">
+            <button onclick="switchTab('leseverstehen')" id="tab-leseverstehen" class="py-4 text-label-md font-bold text-on-surface-variant active-tab">1. Leseverstehen</button>
+            <button onclick="switchTab('sprachbausteine')" id="tab-sprachbausteine" class="py-4 text-label-md font-bold text-on-surface-variant">2. Sprachbausteine</button>
+            <button onclick="switchTab('schreiben')" id="tab-schreiben" class="py-4 text-label-md font-bold text-on-surface-variant">3. Schreiben</button>
+        </div>
+    </div>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pb-24 max-w-[1100px] mx-auto w-full px-container-margin-mobile md:px-container-margin-desktop pt-8">
+        
+        <!-- SECTION 1: LESEVERSTEHEN -->
+        <section id="section-leseverstehen" class="space-y-6">
+            <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+                <h2 class="text-headline-md font-headline-md text-on-surface mb-2">Leseverstehen — Teil 1</h2>
+                <p class="text-body-md text-on-surface-variant mb-6">Read the text snippet and choose the best matching headline from the list.</p>
+
+                <!-- Headline Options -->
+                <div class="bg-surface-container-low p-4 rounded-xl mb-6">
+                    <h3 class="text-label-md font-bold text-on-surface mb-3">Available Headlines (Headings a–j):</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-label-sm text-on-surface-variant">
+                        <div><strong>A.</strong> Doppelt so viele Studenten wie vor einer Generation?</div>
+                        <div><strong>B.</strong> Das 3D-Fernsehen steht vor dem Aus?</div>
+                        <div><strong>C.</strong> Die Welt ist unsportlich</div>
+                        <div><strong>D.</strong> 90 Prozent der Deutschen sind online</div>
+                        <div><strong>E.</strong> Warum wir ohne Zeitumstellung besser schlafen</div>
+                        <div><strong>F.</strong> Hackerangriff auf bekannte Fluggesellschaft</div>
+                        <div><strong>G.</strong> Bewegung - Warum Sport so gesund ist</div>
+                        <div><strong>H.</strong> Vorsicht bei Reisegewinnen</div>
+                        <div><strong>I.</strong> Wasser weltweit - Weltwassertag</div>
+                        <div><strong>J.</strong> Yoga für Kinder</div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Text 1 -->
+                    <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant">
+                        <span class="bg-primary/10 text-primary text-label-sm px-3 py-1 rounded-full uppercase tracking-wider">Text 1</span>
+                        <p class="text-body-md text-on-surface mt-4 mb-4 italic">
+                            "Fast jeder zweite Deutsche bewegt sich zu wenig - und gefährdet so seine Gesundheit, warnen Wissenschaftler und Experten. Aber auch weltweit sieht es nicht besser aus. Sitzen auf der Arbeit, sitzen in der U-Bahn, sitzen vorm Computer: Mehr als 1,4 Milliarden Menschen sitzen zu viel."
+                        </p>
+                        <label class="block text-label-md font-bold text-on-surface mb-2">Choose matching headline:</label>
+                        <select id="ans-lese-1" class="w-full md:w-80 bg-surface border border-outline rounded-xl p-2 focus:ring-primary focus:border-primary">
+                            <option value="">-- Choose Heading --</option>
+                            <option value="A">A. Doppelt so viele Studenten...</option>
+                            <option value="B">B. Das 3D-Fernsehen steht vor dem Aus?</option>
+                            <option value="C">C. Die Welt ist unsportlich</option>
+                            <option value="D">D. 90 Prozent der Deutschen sind online</option>
+                            <option value="E">E. Warum wir ohne Zeitumstellung besser schlafen</option>
+                            <option value="F">F. Hackerangriff auf bekannte Fluggesellschaft</option>
+                            <option value="G">G. Bewegung - Warum Sport so gesund ist</option>
+                            <option value="H">H. Vorsicht bei Reisegewinnen</option>
+                            <option value="I">I. Wasser weltweit - Weltwassertag</option>
+                            <option value="J">J. Yoga für Kinder</option>
+                        </select>
+                    </div>
+
+                    <!-- Text 2 -->
+                    <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant">
+                        <span class="bg-primary/10 text-primary text-label-sm px-3 py-1 rounded-full uppercase tracking-wider">Text 2</span>
+                        <p class="text-body-md text-on-surface mt-4 mb-4 italic">
+                            "Junge Menschen in Deutschland erreichen einen höheren Bildungsabschluss als die Generation ihrer Eltern. 33 Prozent der 30- bis 36-Jährigen verfügen über einen Hochschulabschluss. Bei den heute 60- bis 66-Jährigen liegt der Anteil bei 20 Prozent."
+                        </p>
+                        <label class="block text-label-md font-bold text-on-surface mb-2">Choose matching headline:</label>
+                        <select id="ans-lese-2" class="w-full md:w-80 bg-surface border border-outline rounded-xl p-2 focus:ring-primary focus:border-primary">
+                            <option value="">-- Choose Heading --</option>
+                            <option value="A">A. Doppelt so viele Studenten...</option>
+                            <option value="B">B. Das 3D-Fernsehen steht vor dem Aus?</option>
+                            <option value="C">C. Die Welt ist unsportlich</option>
+                            <option value="D">D. 90 Prozent der Deutschen sind online</option>
+                            <option value="E">E. Warum wir ohne Zeitumstellung besser schlafen</option>
+                            <option value="F">F. Hackerangriff auf bekannte Fluggesellschaft</option>
+                            <option value="G">G. Bewegung - Warum Sport so gesund ist</option>
+                            <option value="H">H. Vorsicht bei Reisegewinnen</option>
+                            <option value="I">I. Wasser weltweit - Weltwassertag</option>
+                            <option value="J">J. Yoga für Kinder</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SPRACHBAUSTEINE -->
+        <section id="section-sprachbausteine" class="space-y-6 hidden">
+            <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+                <h2 class="text-headline-md font-headline-md text-on-surface mb-2">Sprachbausteine — Teil 1</h2>
+                <p class="text-body-md text-on-surface-variant mb-6">Choose the correct grammar or vocabulary options to fill the gaps in the letter below.</p>
+
+                <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant leading-relaxed">
+                    <p class="mb-4">Hallo Mareike,</p>
+                    <p class="mb-4">
+                        ich freue mich, dass du an meinem Land und meiner Sprache interessiert bist. Wie dir 
+                        <select id="ans-sb-1" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__21__</option><option value="a">unser</option><option value="b">uns</option><option value="c">unsere</option></select> 
+                        gemeinsamer Freund Jakob mitgeteilt hat, möchte ich, dass wir uns gegenseitig schreiben, 
+                        <select id="ans-sb-2" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__22__</option><option value="a">weil</option><option value="b">damit</option><option value="c">um</option></select> 
+                        ich mein Deutsch verbessern kann.
+                    </p>
+                    <p class="mb-4">
+                        Ich möchte mich erstmal bei dir 
+                        <select id="ans-sb-3" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__23__</option><option value="a">vorstellen</option><option value="b">kennenlernen</option><option value="c">befreunden</option></select> 
+                        . Mein Name ist Rita und ich wohne in Pomaz. Ich arbeite in 
+                        <select id="ans-sb-4" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__24__</option><option value="a">einem</option><option value="b">einer</option><option value="c">eines</option></select> 
+                        Krankenhaus, aber der Job als Krankenschwester macht mir nicht so viel Spaß. 
+                    </p>
+                    <p class="mb-4">
+                        Ich würde mich gerne 
+                        <select id="ans-sb-5" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__25__</option><option value="a">fortbilden</option><option value="b">lernen</option><option value="c">studieren</option></select> 
+                        oder umorientieren. In 
+                        <select id="ans-sb-6" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__26__</option><option value="a">der Zukunft</option><option value="b">Zukunft</option><option value="c">künftig</option></select> 
+                        möchte ich viel mehr reisen. Ich war schon an einigen Orten in Europa, aber ich war noch nie in 
+                        <select id="ans-sb-7" class="mx-1 bg-surface border border-outline rounded-lg px-2 py-1 text-label-sm"><option value="">__27__</option><option value="a">einem</option><option value="b">einer</option><option value="c">eines</option></select> 
+                        deutschsprachigen Land.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SCHREIBEN -->
+        <section id="section-schreiben" class="space-y-6 hidden">
+            <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+                <h2 class="text-headline-md font-headline-md text-on-surface mb-2">Schriftlicher Ausdruck (Writing Mock)</h2>
+                <p class="text-body-md text-on-surface-variant mb-6">Write a reply letter to your acquaintance based on the letter prompt below.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Writing Prompt -->
+                    <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+                        <h3 class="text-label-md font-bold text-on-surface mb-4">Letter Prompt from Maike:</h3>
+                        <p class="text-body-md text-on-surface-variant mb-4 italic">
+                            "...wie geht es dir? Ich habe zurzeit viel zu tun. Mein Studium nimmt viel Zeit in Anspruch. Abends ruhe ich mich aber gern mit meinem Freund aus und wir schauen uns unsere Lieblingsserie 'Riders' an. Sie handelt von US Navy Kriminalfällen..."
+                        </p>
+                        <h4 class="text-label-sm font-bold text-on-surface mb-2">Write about these 4 points:</h4>
+                        <ul class="list-disc pl-5 text-label-sm text-on-surface-variant space-y-1 mb-4">
+                            <li>Wie heißt Ihre Lieblingsserie oder Lieblingssendung</li>
+                            <li>Wovon handelt sie</li>
+                            <li>Was mögen Sie daran</li>
+                            <li>Vorschlag für einen gemeinsamen Filmabend?</li>
+                        </ul>
+                    </div>
+
+                    <!-- Editor and Helper -->
+                    <div class="flex flex-col gap-4">
+                        <textarea id="schreiben-textarea" class="w-full h-64 bg-surface border border-outline rounded-xl p-4 font-body-md focus:ring-primary focus:border-primary" placeholder="Köln, [Datum]&#10;Liebe Maike,&#10;..."></textarea>
+                        
+                        <div class="flex gap-4">
+                            <button onclick="toggleModelAnswer()" class="flex-1 bg-surface-container hover:bg-surface-container-high py-3 rounded-xl text-label-md font-bold transition-all">View Model Answer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Answer Card -->
+                <div id="model-answer-card" class="bg-secondary/10 rounded-xl p-6 border border-secondary border-dashed hidden transition-all">
+                    <h4 class="text-label-md font-bold text-secondary mb-2">Model Answer from Sina:</h4>
+                    <div class="text-body-md text-on-surface italic whitespace-pre-line">
+                        Köln, 28.11.2018
+                        Liebe Maike,
+                        vielen Dank für deinen Brief.
+                        
+                        Serien schaue ich nicht sehr gerne. Ich mag aber Sendungen, besonders Kochsendungen. Meine Lieblingskochsendung heißt „Der große Geschmackstest“. In dieser Sendung geht ein Sternekoch zu Restaurants und Hotels, die nicht gut laufen und schaut sich erstmal die Küche, den Koch und das Team an. Er hat nur eine Woche Zeit alles zu verbessern, damit das Geschäft wieder viele Gäste bekommt.
+                        
+                        Ich mag, dass der Sternekoch streng mit dem Koch und dem Team ist und viele professionelle Tipps gibt. Außerdem koche ich sehr gerne und bekomme in der Sendung viele Kochtipps.
+                        
+                        Wenn du einen guten Film kennst, können wir mal einen Filmabend machen. Was denkst du? Ich freue mich auf deine Antwort.
+                        
+                        Liebe Grüße
+                        Sina
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Panel -->
+        <div class="mt-8 flex justify-end">
+            <button onclick="submitExam()" class="px-8 py-3 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary-container transition-all active:scale-95 shadow-md">Submit Exam</button>
+        </div>
+    </main>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+            document.querySelectorAll('.sticky button').forEach(btn => btn.classList.remove('active-tab'));
+            
+            document.getElementById('section-' + tabId).classList.remove('hidden');
+            document.getElementById('tab-' + tabId).classList.add('active-tab');
+        }
+
+        // Toggle Model Letter Answer
+        function toggleModelAnswer() {
+            const card = document.getElementById('model-answer-card');
+            card.classList.toggle('hidden');
+        }
+
+        // Timer simulation
+        let time = 30 * 60;
+        const timer = document.getElementById('timer');
+        const interval = setInterval(() => {
+            if(time > 0) {
+                time--;
+                const mins = Math.floor(time / 60);
+                const secs = time % 60;
+                timer.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+            } else {
+                clearInterval(interval);
+                alert("Time's up!");
+                submitExam();
+            }
+        }, 1000);
+
+        // Grade the exam
+        function submitExam() {
+            clearInterval(interval);
+            let score = 0;
+            let total = 9; // 2 reading + 7 grammar
+
+            // Check Leseverstehen
+            if (document.getElementById('ans-lese-1').value === 'G') score++;
+            if (document.getElementById('ans-lese-2').value === 'A') score++;
+
+            // Check Sprachbausteine
+            if (document.getElementById('ans-sb-1').value === 'a') score++;
+            if (document.getElementById('ans-sb-2').value === 'b') score++;
+            if (document.getElementById('ans-sb-3').value === 'a') score++;
+            if (document.getElementById('ans-sb-4').value === 'a') score++;
+            if (document.getElementById('ans-sb-5').value === 'a') score++;
+            if (document.getElementById('ans-sb-6').value === 'a') score++;
+            if (document.getElementById('ans-sb-7').value === 'a') score++;
+
+            const percentage = Math.round((score / total) * 100);
+            
+            alert(`Exam Submitted!\nYour Score: ${score}/${total} (${percentage}%)\n\nReview the corrections in each section.`);
+            
+            // Show correct answers inline
+            markCorrect('ans-lese-1', 'G');
+            markCorrect('ans-lese-2', 'A');
+            markCorrect('ans-sb-1', 'a');
+            markCorrect('ans-sb-2', 'b');
+            markCorrect('ans-sb-3', 'a');
+            markCorrect('ans-sb-4', 'a');
+            markCorrect('ans-sb-5', 'a');
+            markCorrect('ans-sb-6', 'a');
+            markCorrect('ans-sb-7', 'a');
+        }
+
+        function markCorrect(elemId, correctVal) {
+            const elem = document.getElementById(elemId);
+            if (elem.value === correctVal) {
+                elem.style.border = '2px solid #006c49';
+                elem.style.backgroundColor = '#ecfdf5';
+            } else {
+                elem.style.border = '2px solid #ba1a1a';
+                elem.style.backgroundColor = '#fef2f2';
+                // Add a small helper text to show correct answer
+                const tip = document.createElement('span');
+                tip.className = 'text-label-sm text-secondary font-bold ml-1';
+                tip.textContent = ` (Correct: ${correctVal.toUpperCase()})`;
+                elem.parentNode.appendChild(tip);
+            }
+        }
+    </script>
+</body>
+</html>
